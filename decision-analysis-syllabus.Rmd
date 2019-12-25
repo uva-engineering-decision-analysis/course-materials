@@ -1,0 +1,8 @@
+---
+title: 'SYS 6014 Decision Analysis: Syllabus'
+author: "Arthur Small"
+date: "Spring 2020"
+output:
+  html_notebook: default
+  github_document: default
+---

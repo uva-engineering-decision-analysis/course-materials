@@ -1,0 +1,2 @@
+# Keep .html code generated from R Notebooks from showing up in Github language statistics
+*.nb.html linguist-generated=true

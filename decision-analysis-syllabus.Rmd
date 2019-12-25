@@ -1,8 +1,13 @@
 ---
-title: 'SYS 6014 Decision Analysis: Syllabus'
+title: 'Decision Analysis: Syllabus'
 author: "Arthur Small"
-date: "Spring 2020"
+date: "SYS 6014, Spring 2020"
 output:
   html_notebook: default
   github_document: default
 ---
+
+
+# Course Mechanics
+
+# Course Topics

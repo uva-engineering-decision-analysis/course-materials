@@ -1757,10 +1757,62 @@ summary {
 </div>
 <div id="course-topics" class="section level1">
 <h1>Course Topics</h1>
+<div id="prerequisites" class="section level2">
+<h2>Prerequisites</h2>
+<p>Hoff, 2.1-2.4</p>
+</div>
+<div id="introduction-to-decsion-analysis" class="section level2">
+<h2>Introduction to decsion analysis</h2>
+<p>Readings:</p>
+<p>Berger, 1.1-1.3, 1.5-1.6</p>
+<p>Hoff, 1.1-1.3</p>
+<div id="a-simple-example" class="section level3">
+<h3>A simple example</h3>
+<p>[…]</p>
+<p>The example highlights a process we will see many times:</p>
+<ul>
+<li>A decision-maker selects one option from a menu of possible actions.</li>
+<li>The decision-maker’s payoff from the choice depends both on the action taken, and on the state of the world.</li>
+<li>The decision-maker may have some information about the state of the world, but maybe not perfect information.</li>
+<li>Through collection and analysis of sample data, the decision-maker has an opportunity to sharpen her estimate of the true state of the world. Potentially, better information could yield a decision with higher payoffs.</li>
+</ul>
+</div>
+<div id="definitions-and-formalism" class="section level3">
+<h3>Definitions and formalism</h3>
+<div id="states-of-nature" class="section level4">
+<h4>States of nature</h4>
+<p>Let <span class="math inline">\(\theta\)</span> denote the <em>state of nature</em> (or the true <em>state of the world</em>).</p>
+<p>Examples:</p>
+<ul>
+<li>When …</li>
+</ul>
+<p>Let <span class="math inline">\(\Theta\)</span> denote the set of possible states of nature: <span class="math inline">\(\theta \in \Theta\)</span>.</p>
+</div>
+<div id="actions" class="section level4">
+<h4>Actions</h4>
+<p>Statistical decision theory branches off from the main stem of statistics here.</p>
+<p>We suppose a decision-maker has a set of <em>actions</em> that can be taken.</p>
+<p>Examples:</p>
+<p>The action will be chosen from a menu of options called an <em>action set</em> <span class="math inline">\(\mathcal{A}\)</span>.</p>
+<p>Action sets may be discrete: e.g., <span class="math inline">\(\mathcal{A} = \{\)</span>“apply medication”, “don’t” <span class="math inline">\(\}\)</span>; or continuous: <span class="math inline">\(\mathcal{A} = \{\)</span> a range of possible dosage levels <span class="math inline">\(\}\)</span>.</p>
+<p>In our formalism, the decision-maker typically will choose <em>exactly one</em> action. If the decision-maker can perform multiple actions – say, “install a solar panel <em>and</em> improve insulation” – we will represent the action set as a list of ordered tuples. If the decision-maker has the opton to do nothing, or to wait, this option will be listed explicitly, as well.</p>
+</div>
+<div id="consequences-of-actions-payoffs-or-lossess" class="section level4">
+<h4>Consequences of actions: <em>payoffs</em> or <em>lossess</em></h4>
+</div>
+<div id="uncertainy-beliefs-information" class="section level4">
+<h4>Uncertainy, beliefs, information</h4>
+<p>We represent the decision-maker’s beliefs (or <em>information</em>) as a probability distribution (or <em>probability measure</em>) over <span class="math inline">\(\Theta\)</span>.</p>
+</div>
+<div id="lotteries" class="section level4">
+<h4>Lotteries</h4>
 <!-- rnb-text-end -->
 </div>
+</div>
+</div>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAnRGVjaXNpb24gQW5hbHlzaXM6IFN5bGxhYnVzJwphdXRob3I6ICJBcnRodXIgU21hbGwiCmRhdGU6ICJTWVMgNjAxNCwgU3ByaW5nIDIwMjAiCm91dHB1dDoKICBodG1sX25vdGVib29rOiBkZWZhdWx0CiAgZ2l0aHViX2RvY3VtZW50OiBkZWZhdWx0Ci0tLQoKCiMgQ291cnNlIE1lY2hhbmljcwoKIyBDb3Vyc2UgVG9waWNz</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAnRGVjaXNpb24gQW5hbHlzaXM6IFN5bGxhYnVzJwphdXRob3I6ICJBcnRodXIgU21hbGwiCmRhdGU6ICJTWVMgNjAxNCwgU3ByaW5nIDIwMjAiCm91dHB1dDoKICBodG1sX25vdGVib29rOiBkZWZhdWx0CiAgZ2l0aHViX2RvY3VtZW50OiBkZWZhdWx0Ci0tLQoKCiMgQ291cnNlIE1lY2hhbmljcwoKIyBDb3Vyc2UgVG9waWNzCgojIyBQcmVyZXF1aXNpdGVzCgpIb2ZmLCAyLjEtMi40CgojIyAgSW50cm9kdWN0aW9uIHRvIGRlY3Npb24gYW5hbHlzaXMKClJlYWRpbmdzOgoKQmVyZ2VyLCAxLjEtMS4zLCAxLjUtMS42CgpIb2ZmLCAxLjEtMS4zCgojIyMgQSBzaW1wbGUgZXhhbXBsZQoKWy4uLl0KClRoZSBleGFtcGxlIGhpZ2hsaWdodHMgYSBwcm9jZXNzIHdlIHdpbGwgc2VlIG1hbnkgdGltZXM6CgogICogQSBkZWNpc2lvbi1tYWtlciBzZWxlY3RzIG9uZSBvcHRpb24gZnJvbSBhIG1lbnUgb2YgcG9zc2libGUgYWN0aW9ucy4KICAqIFRoZSBkZWNpc2lvbi1tYWtlcidzIHBheW9mZiBmcm9tIHRoZSBjaG9pY2UgZGVwZW5kcyBib3RoIG9uIHRoZSBhY3Rpb24gdGFrZW4sIGFuZCBvbiB0aGUgc3RhdGUgb2YgdGhlIHdvcmxkLgogICogVGhlIGRlY2lzaW9uLW1ha2VyIG1heSBoYXZlIHNvbWUgaW5mb3JtYXRpb24gYWJvdXQgdGhlIHN0YXRlIG9mIHRoZSB3b3JsZCwgYnV0IG1heWJlIG5vdCBwZXJmZWN0IGluZm9ybWF0aW9uLgogICogVGhyb3VnaCBjb2xsZWN0aW9uIGFuZCBhbmFseXNpcyBvZiBzYW1wbGUgZGF0YSwgdGhlIGRlY2lzaW9uLW1ha2VyIGhhcyBhbiBvcHBvcnR1bml0eSB0byBzaGFycGVuIGhlciBlc3RpbWF0ZSBvZiB0aGUgdHJ1ZSBzdGF0ZSBvZiB0aGUgd29ybGQuIFBvdGVudGlhbGx5LCBiZXR0ZXIgaW5mb3JtYXRpb24gY291bGQgeWllbGQgYSBkZWNpc2lvbiB3aXRoIGhpZ2hlciBwYXlvZmZzLgoKIyMjIERlZmluaXRpb25zIGFuZCBmb3JtYWxpc20KCiMjIyMgU3RhdGVzIG9mIG5hdHVyZQoKTGV0ICRcdGhldGEkIGRlbm90ZSB0aGUgKnN0YXRlIG9mIG5hdHVyZSogKG9yIHRoZSB0cnVlICpzdGF0ZSBvZiB0aGUgd29ybGQqKS4gCgpFeGFtcGxlczoKCiAgKiBXaGVuIC4uLgogIApMZXQgJFxUaGV0YSQgZGVub3RlIHRoZSBzZXQgb2YgcG9zc2libGUgc3RhdGVzIG9mIG5hdHVyZTogJFx0aGV0YSBcaW4gXFRoZXRhJC4KCgojIyMjIEFjdGlvbnMKClN0YXRpc3RpY2FsIGRlY2lzaW9uIHRoZW9yeSBicmFuY2hlcyBvZmYgZnJvbSB0aGUgbWFpbiBzdGVtIG9mIHN0YXRpc3RpY3MgaGVyZS4gCgpXZSBzdXBwb3NlIGEgZGVjaXNpb24tbWFrZXIgaGFzIGEgc2V0IG9mICphY3Rpb25zKiB0aGF0IGNhbiBiZSB0YWtlbi4KCkV4YW1wbGVzOgoKVGhlIGFjdGlvbiB3aWxsIGJlIGNob3NlbiBmcm9tIGEgbWVudSBvZiBvcHRpb25zIGNhbGxlZCBhbiAqYWN0aW9uIHNldCogJFxtYXRoY2Fse0F9JC4gCgpBY3Rpb24gc2V0cyBtYXkgYmUgZGlzY3JldGU6IGUuZy4sICRcbWF0aGNhbHtBfSA9IFx7JCJhcHBseSBtZWRpY2F0aW9uIiwgImRvbid0IiAkXH0kOyBvciBjb250aW51b3VzOiAkXG1hdGhjYWx7QX0gPSBceyQgYSByYW5nZSBvZiBwb3NzaWJsZSBkb3NhZ2UgbGV2ZWxzICRcfSQuCgpJbiBvdXIgZm9ybWFsaXNtLCB0aGUgZGVjaXNpb24tbWFrZXIgdHlwaWNhbGx5IHdpbGwgY2hvb3NlICpleGFjdGx5IG9uZSogYWN0aW9uLiBJZiB0aGUgZGVjaXNpb24tbWFrZXIgY2FuIHBlcmZvcm0gbXVsdGlwbGUgYWN0aW9ucyAtLSBzYXksICJpbnN0YWxsIGEgc29sYXIgcGFuZWwgKmFuZCogaW1wcm92ZSBpbnN1bGF0aW9uIiAtLSB3ZSB3aWxsIHJlcHJlc2VudCB0aGUgYWN0aW9uIHNldCBhcyBhIGxpc3Qgb2Ygb3JkZXJlZCB0dXBsZXMuIElmIHRoZSBkZWNpc2lvbi1tYWtlciBoYXMgdGhlIG9wdG9uIHRvIGRvIG5vdGhpbmcsIG9yIHRvIHdhaXQsIHRoaXMgb3B0aW9uIHdpbGwgYmUgbGlzdGVkIGV4cGxpY2l0bHksIGFzIHdlbGwuIAoKCiMjIyMgQ29uc2VxdWVuY2VzIG9mIGFjdGlvbnM6ICpwYXlvZmZzKiBvciAqbG9zc2VzcyoKCgoKCiMjIyMgVW5jZXJ0YWlueSwgYmVsaWVmcywgaW5mb3JtYXRpb24KCgpXZSByZXByZXNlbnQgdGhlIGRlY2lzaW9uLW1ha2VyJ3MgYmVsaWVmcyAob3IgKmluZm9ybWF0aW9uKikgYXMgYSBwcm9iYWJpbGl0eSBkaXN0cmlidXRpb24gKG9yICpwcm9iYWJpbGl0eSBtZWFzdXJlKikgb3ZlciAkXFRoZXRhJC5cZm9vdG5vdGV7VG8gYmUgbW9yZSBmb3JtYWwgYW5kIHRlY2huaWNhbGx5IGNvcnJlY3Q6IEEgZ2l2ZW4gcHJvYmFiaWxpdHkgbWVhc3VyZSBpcyBkZWZpbmVkIG92ZXIgYSBzcGVjaWZpZWQgc2V0IG9mIHN1YnNldHMgb2YgJFxUaGV0YSQgdGhhdCBhcmUgY2FsbGVkICptZWFzdXJhYmxlKiBzdWJzZXRzLiBUaGUgc2V0IG9mIG1lYXN1cmFibGUgc3Vic2V0cyBtdXN0IHNhdGlzZnkgY2VydGFpbiB0ZWNobmljYWwgcHJvcGVyaWVzLiBGb3IgZXhhbXBsZSwgaWYgJEEsIEIgXGluIFRoZXRhJCBhcmUgYm90aCBtZWFzdXJlYWJsZSwgdGhlbiAkQSBcY2FwIEIkLCAkQSBcY3VwIEIkLCBhbmQgdGhlaXIgY29tcGxlbWVudHMgJEFeQyQgYW5kICRCXkMkIG11c3QgYWxzbyBiZSBtZWFzdXJhYmxlLiBGb3IgdGhlIG1vc3QgcGFydCBpbiB0aGlzIGNvdXJzZSwgd2Ugd2lsbCBub3QgbmVlZCB0byB3b3JyeSBhYm91dCB0aGUgbWVhc3VyZS10aGVvcmV0aWMgZm91bmRhdGlvbnMgb2YgcHJvYmFiaWxpdHkgdGhlb3J5Ln0KCgojIyMjIExvdHRlcmllcwoKCg==</div>
 
 
 

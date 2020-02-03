@@ -276,6 +276,25 @@ They *sharpen the probability distribution* over states of nature.
 The actor can now choose an optimal action based not on her *prior* (or *naive*) beliefs, but on her *posterior* beliefs, conditioned on the current data.
 
 
+### Payoff functions: Define in terms of $x$ (state) or $\theta$ (parameter value)?
+
+Depending on your appplication, it may make sense to model payoffs (or losses) as either a function of observed realized state $x \in \mathbb{X}$, e.g., $x$ denotes realized temperature:
+
+$$L_0 = L_0(a;x)$$
+
+or in terms of the value of an unobserved parameter, e.g., $\theta$ denotes mean temperature:
+
+$$L_1 = L_1(a; \theta)$$
+
+### Parameter-dependent payoffs as reduced form of state-dependent payoffs
+
+In many cases, you can represent the $\theta$ formulation as the *reduced form* of the $x$ formulation, e.g.
+
+$$L_1(a;\theta) = E[L_0(a;x) | \theta]$$
+
+
+
+
 # Additional notes
 
 Background: This course centers on a semester-long project to build a working algorithmic decision tool. As used here, the term algorithmic decision tool means a computational system that empowers a user to make data-driven, near-optimal decisions in a specific domain area.

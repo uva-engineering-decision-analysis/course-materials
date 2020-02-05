@@ -1,7 +1,7 @@
 ---
-title: "The Cloud Hunter's Problem"
+title: "The Cloud Hunter’s Problem: An Automated Decision Algorithm to Improve the Productivity of Scientific Data Collection in Stochastic Environments"
 subtitle: 'SYS 6014 Decision Analysis, Spring 2020'
-author: "Arthur Small"
+author: "ARTHUR SMALL, JASON B. STEFIK, JOHANNES VERLINDE, NATHANIEL C. JOHNSON"
 date:   "5 Feb 2020"
 output:
   beamer_presentation:
@@ -64,5 +64,121 @@ render("", beamer_presentation(
 ```{r load packages, echo=FALSE, include=FALSE}
 library(here)
 ```
+
+### Introduction: The problem
+
+The Cloud Hunter’s basic problem is to decide how to allocate a limited budget of flight time over the course of a field season. 
+
+Decisions must be made 1 day ahead, based on imperfect day-ahead forecasts of favorable conditions.
+
+## Formal model of the decision problem
+
+### Model setup
+
+$D$ : length of the field season in days
+
+$F \leq D$ : number of flights in the Cloud Hunter’s budget. 
+
+$d = D, \ldots, 1$ : index of dates
+
+$f = F, \ldots, 1$ : index of flights
+
+$X_d$ : random state variable : $X_d = 1$ if conditions on date $d$ are good, 0 otherwise.
+
+$x_d$ : realized value of $X_d$
+
+##
+
+$a_d$ :  binary control variable : $a_d = 1$ if a flight is made on date $d$, 0 otherwise. 
+
+$\bf{X} =  < x_D, . . . , x_1>$ : vector of conditions
+
+$\bf{a} =  < x_D, . . . , x_1>$ : vector of choices 
+
+
+### Decision rule
+
+<!-- Choose $\bf{a}$ to -->
+
+<!-- $$max_\bf{a} E[\bf{a} \cdot \bf{X}]$$ -->
+
+### Decision taken on basis of day-ahead forecast
+
+Before taking each decision, actor receives a forecast signal $s_d \in \mathbb{S}$.
+
+$$p(s) =  \Pr\{x_d = 1 | s_d = s\}$$.
+
+
+## Distribution of forecast signals
+
+$\pi(s)$ : unconditional, probability that forecast will take value $s$. 
+
+$\pi(\cdot)$ defines a probability distribution over the set $\mathbb{S}$ of possible forecast signals.
+
+## Intertemporal optimization via dynamic programming
+
+### 
+
+```{r, out.width='50%', fig.align='center', fig.cap='Graphical representation of the decision algorithm.'}
+knitr::include_graphics(here('slides','graphics','dynamic_programming_lattice.png'))
+```
+
+
+## Probabilistic forecasting of favorable conditions using self-organizing maps
+
+###
+
+```{r, out.width='50%', fig.align='center', fig.cap='6 X 4 SOM grid for relative humidity profiles'}
+knitr::include_graphics(here('slides','graphics','SOM_grid_literal.png'))
+```
+
+###
+
+```{r, out.width='50%', fig.align='center', fig.cap='Conditional probability distribution of SOM state realizations following a forecast of SOM state 1'}
+knitr::include_graphics(here('slides','graphics','conditional_distribution_SOM_state_1.png'))
+```
+
+###
+
+```{r, out.width='50%', fig.align='center', fig.cap='Estimated probabilities of good conditions for data collection, as a function of day-ahead SOM forecast'}
+knitr::include_graphics(here('slides','graphics','SOM_grid_calibrated.png'))
+```
+
+## Results
+
+###
+
+```{r, out.width='75%', fig.align='center', fig.cap='Computed values for the value function $V(d, f)$'}
+knitr::include_graphics(here('slides','graphics','value_function.png'))
+```
+
+
+Dark line : simulated sequence of flight decisions
+
+  * Diagonal movements = fly dates, horizontal movements  = no-fly dates 
+
+###
+
+```{r, out.width='50%', fig.align='center', fig.cap='Results: the algorithm’s simulated performance during 2009 field season, compared with realized performance of heuristic decision procedure.'}
+knitr::include_graphics(here('slides','graphics','algorithm_performance.png'))
+```
+
+
+The algorithm achieves a 21% increase in the number of successful flights.
+
+###
+
+```{r, out.width='50%', fig.align='center', fig.cap='Summary of outcomes'}
+knitr::include_graphics(here('slides','graphics','hits_and_misses.png'))
+```
+
+
+
+Successes are flights launched on days with good conditions. 
+
+Type I errors are decisions to fly only to find no clouds.
+
+Type II errors are decisions to stand down only to find that the desired conditions existed.
+
 
 

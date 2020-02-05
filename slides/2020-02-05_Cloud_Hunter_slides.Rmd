@@ -1,0 +1,68 @@
+---
+title: "The Cloud Hunter's Problem"
+subtitle: 'SYS 6014 Decision Analysis, Spring 2020'
+author: "Arthur Small"
+date:   "5 Feb 2020"
+output:
+  beamer_presentation:
+ #   theme: "metropolis"
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structuresmallcapsserif"
+    toc: true
+    #toc_depth: 3
+    slide_level: 3
+    fig_width: 3.5
+    fig_height: 3
+    fig_caption: true
+    
+   # html_document:
+   #  toc: true
+   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r make_beamer_slides, include=FALSE, eval= FALSE}
+library(rmarkdown)
+
+# See documentation at: https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html
+# and at: https://bookdown.org/yihui/rmarkdown/beamer-presentation.html
+# and at: https://rdrr.io/cran/rmarkdown/man/render.html
+
+render("", beamer_presentation(
+  toc = FALSE,
+  slide_level = NULL,
+  number_sections = FALSE,
+  incremental = FALSE,
+  fig_width = 10,
+  fig_height = 7,
+  fig_crop = TRUE,
+  fig_caption = TRUE,
+  dev = "pdf",
+  df_print = "default",
+  theme = "default",
+  colortheme = "default",
+  fonttheme = "default",
+  highlight = "default",
+  template = "default",
+  keep_tex = FALSE,
+  keep_md = FALSE,
+  latex_engine = "pdflatex",
+  citation_package = c("none", "natbib", "biblatex"),
+  self_contained = TRUE,
+  includes = NULL,
+  md_extensions = NULL,
+  pandoc_args = NULL
+)
+```
+
+
+```{r load packages, echo=FALSE, include=FALSE}
+library(here)
+```
+
+

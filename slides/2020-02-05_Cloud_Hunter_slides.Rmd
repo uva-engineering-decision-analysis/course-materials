@@ -1,8 +1,9 @@
 ---
-title: "The Cloud Hunter’s Problem: An Automated Decision Algorithm to Improve the Productivity of Scientific Data Collection in Stochastic Environments"
-subtitle: 'SYS 6014 Decision Analysis, Spring 2020'
-author: "ARTHUR SMALL, JASON B. STEFIK, JOHANNES VERLINDE, NATHANIEL C. JOHNSON"
-date:   "5 Feb 2020"
+title: "The Cloud Hunter’s Problem"
+subtitle: "An Automated Decision Algorithm to Improve the Productivity of Scientific Data Collection in Stochastic Environments"
+author: "Arthur Small"
+institute: "based on work with JASON B. STEFIK, JOHANNES VERLINDE, NATHANIEL C. JOHNSON"
+date:   7 Feb 2020
 output:
   beamer_presentation:
  #   theme: "metropolis"
@@ -20,6 +21,11 @@ output:
    #  toc: true
    
 ---
+
+Hello...
+
+#### Is there anybody *in* there?
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -65,13 +71,37 @@ render("", beamer_presentation(
 library(here)
 ```
 
-### Introduction: The problem
+
+## Theme: Data-driven decision making
+
+
+## Introduction: The problem
 
 The Cloud Hunter’s basic problem is to decide how to allocate a limited budget of flight time over the course of a field season. 
 
-Decisions must be made 1 day ahead, based on imperfect day-ahead forecasts of favorable conditions.
+Decisions must be made 1 day ahead, based on imperfect day-ahead forecasts of whether conditions are good or bad.
+
+###
+
+#### Their current decision-making process:
+
+```{r, out.width='70%', fig.align='center'}
+knitr::include_graphics(here('slides','graphics','scientists_arguing.png'))
+```
+
+###
+
+#### Our proposed decision-making process:
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics(here('slides','graphics','The_Creation_of_Adam.png'))
+```
+
+
 
 ## Formal model of the decision problem
+
+
 
 ### Model setup
 
@@ -81,37 +111,44 @@ $F \leq D$ : number of flights in the Cloud Hunter’s budget.
 
 $d = D, \ldots, 1$ : index of dates
 
-$f = F, \ldots, 1$ : index of flights
+$f = F, \ldots, 1$ : index of flights remaining in budget
 
-$X_d$ : random state variable : $X_d = 1$ if conditions on date $d$ are good, 0 otherwise.
+$X_d$ : binary random state variable indicating quality of conditions for data collection: 
 
-$x_d$ : realized value of $X_d$
+ * $X_d = 1$ if conditions on date $d$ are good, 0 otherwise
+ * $x_d$ : realized value of $X_d$
 
-##
+###
 
-$a_d$ :  binary control variable : $a_d = 1$ if a flight is made on date $d$, 0 otherwise. 
+$a_d$ :  binary control variable 
 
-$\bf{X} =  < x_D, . . . , x_1>$ : vector of conditions
+* $a_d = 1$ iff they opt to fly on date $d$, 0 otherwise
 
-$\bf{a} =  < x_D, . . . , x_1>$ : vector of choices 
+$\bf{X} =  < X_D, . . . , X_1>$ : conditions on dates $d = D, \ldots, 1$
+
+$\bf{a} =  < a_D, . . . , a_1>$ : actions chosen on dates $d = D, \ldots, 1$
 
 
-### Decision rule
+### Objectives
 
-<!-- Choose $\bf{a}$ to -->
 
-<!-- $$max_\bf{a} E[\bf{a} \cdot \bf{X}]$$ -->
+
+Choose $\bf{a}$ to 
+$$max_{\bf{a}} E[\bf{a} \cdot \bf{X}]$$
+
 
 ### Decision taken on basis of day-ahead forecast
 
-Before taking each decision, actor receives a forecast signal $s_d \in \mathbb{S}$.
+Before taking each decision, decision-maker receives a forecast signal $s_d \in \mathbb{S}$.
 
-$$p(s) =  \Pr\{x_d = 1 | s_d = s\}$$.
+Based on a calibrated prediction model, can map this signal to a probability of good conditions:
+
+$$p(s) =  \Pr\{X_d = 1 | s_d = s\}$$.
 
 
 ## Distribution of forecast signals
 
-$\pi(s)$ : unconditional, probability that forecast will take value $s$. 
+$\pi(s)$ : unconditional probability that forecast will take value $s$. 
 
 $\pi(\cdot)$ defines a probability distribution over the set $\mathbb{S}$ of possible forecast signals.
 

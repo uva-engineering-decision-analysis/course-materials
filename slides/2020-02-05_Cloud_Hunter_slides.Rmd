@@ -185,16 +185,16 @@ $\bf{a} =$$< a_D, \ldots, a_1>$ : actions chosen on dates $d = D, \ldots, 1$
 
 Resource constraint: $\sum_d a_d \leq F$.
 
+(Assume flights left over at the end of the season have no residual value.)
+
 ### Payoffs and objectives
 
 *Payoffs*: For a given sequence of choices $\bf{a}$ and realizations $\bf{x}$, the realized amount of data collected $U$ is given by 
-$$U = \bf{a \cdot x} = \sum_d a_d x_d$$.
-
-Assume: Flights left over at the end of the season have no residual value.
+$$U = \mathbf{a \cdot x} =\sum_d a_d x_d$$.
 
 *Decision-maker's objective*: Choose a fly/no-fly decision rule to maximize data collected in expection, subject to the resource constraint on total allowable flights:
 
-Choose $\bf{a}$ to $max_{\bf{a}} E[\bf{a} \cdot \bf{X}]$, subject to $\sum_d a_d \leq F$.
+Choose $\bf{a}$ to $max_{\bf{a}} = E[\bf{a} \cdot \bf{X}]$, subject to $\sum_d a_d \leq F$.
 
 \textbf{Important:} This is a *substantive assumption* about the decision-maker's goals.
 
@@ -230,10 +230,68 @@ Given this set-up, the job of the decision analyst is to devise an *optimal deci
  * $d$ the number of days left in the field season, 
  * $f$ the number of flights left in the budget, and 
  * $p(s)$ the forecast probability that a flight today would be successful.
+ 
+A decision rule $a(\cdot)$ is deemed optimal if its consistent application maximizes in expectation the yield of successful flights realized from a given budget $F$.
 
-## Deriving a solution
+### Comment
+
+This is a challenge of *intertemporal optimization*: each choice $a_d$ alters the expected payoffs for subsequent decisions. 
+
+Need to use tools of optimization that account for this intertemporal structure.
+
+*Dynamic programming* turns out to be the right tool for the job.
+
+## Optimization via dynamic programming
 
 ### Intertemporal optimization via dynamic programming
+
+Basic idea: break the decision problem into two pieces: (i) the next day's decision, and (ii) the rest of the field season after that.
+
+Assume you've got the right answer (!). Given that this answer is optimal, derive the properties that solution must have.
+
+Solve via backward induction.
+
+### 
+
+Suppose an optimal decision rule $a(d, f | s)$ has been found. 
+
+Let $V(d, f)$ denote the expected number of successes that would be realized from repeated application of this rule, starting from initial conditions $<d, f>$. 
+
+By construction, $V(\cdot)$ equals the maximand of the decision-maker's objective function, beginning from these initial conditions, under the substitution $a = a(d, f | s)$:
+
+$$V(d,f) = E^{\pi} \left[ \sum_{i = d,\ldots, 1} a(i,f_i | s_i) \cdot X_i \right]$$
+where the expectation is taken over the probability distribution of all possible sequences of forecast signals (determined by $\pi$), and where $f_i$ denotes the number of flights remaining on date $i$ when the optimal program is followed.
+
+###
+
+$V(d,f)$ called the *value function* for this problem.
+
+Because $a(\cdot)$ is assumed to be optimal, $V(\cdot)$ must satisfy a particular recursive relationship:
+$$ V(d,f) = E^{\pi} \left[ a^*_d \cdot X_d  + V(d-1, f- a^*_d) \right]$$
+where $a^*_d = a(d,f | s_d)$ is the optimal decision.
+
+###
+
+Once the forecast signal $s_d$ is received, $a^*$ will be chosen optimally:
+
+  * If $a^* = 1$, then $V(d,f | s_d) = E \left[X_d | s_d \right]  + V(d-1, f- 1)$.
+  * If $a^* = 0$, then $V(d,f | s_d) = V(d-1, f)$.
+
+Since $V(\cdot)$ is by construction a maximum, we must have:
+$$V(d,f | s_d) = \max \{ E \left[ X_d | s_d \right]  + V(d-1, f- 1), V(d-1, f) \}$$
+               
+$=  \max \{ p(s_d) + V(d-1, f- 1), V(d-1, f) \}$
+               
+###
+
+This formula implies the optimal decision rule: $a^* = 1$ ("fly") only if
+
+$$ p(s_d) \geq V(d-1, f) -V(d-1, f- 1)$$
+i.e., when the expected payoff of the current day's opportunity exceeds the loss in marginal cost associated with arriving tomorrow with one fewer flight in the bank.
+
+Call $p(s_d)$ the *hurdle probability*.
+
+###
 
 ```{r, out.width='50%', fig.align='center', fig.cap='Graphical representation of the decision algorithm.'}
 knitr::include_graphics(here('slides','graphics','dynamic_programming_lattice.png'))

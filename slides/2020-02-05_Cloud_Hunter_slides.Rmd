@@ -3,7 +3,7 @@ title: "The Cloud Hunter’s Problem"
 subtitle: "An Automated Decision Algorithm to Improve the Productivity of Scientific Data Collection in Stochastic Environments"
 author: "Arthur Small"
 institute: "based on work with JASON B. STEFIK, JOHANNES VERLINDE, NATHANIEL C. JOHNSON"
-date:   7 Feb 2020
+date:   Decision Analysis
 output:
   beamer_presentation:
  #   theme: "metropolis"
@@ -16,16 +16,9 @@ output:
     fig_width: 3.5
     fig_height: 3
     fig_caption: true
-    
    # html_document:
    #  toc: true
-   
 ---
-
-Hello...
-
-#### Is there anybody *in* there?
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -72,18 +65,73 @@ library(here)
 ```
 
 
-## Theme: Data-driven decision making
+### Beginnings: Probabilistic forecasting
+
+```{r, out.width='40%', fig.align='center', fig.show = 'hold'}
+knitr::include_graphics(here('slides','graphics','Completing_the_forecast.jpg'))
+```
+
+### 
+
+```{r, out.width='70%', fig.align='full', fig.show = 'hold', fig.cap='Communication of forecast information during the Red River Flood of 1997 in Grand Forks, North Dakota'}
+knitr::include_graphics(here('slides','graphics','Red_river_flood_1997.png'))
+```
+
+### The promise: data-driven decision making
+
+Data science hype: "Better information $\rightarrow$ Better decisions!"
+
+*Claim:* That's wrong. 
+
+Data-driven decision-making also requires complementary analytics and products: 
+
+ * *Prediction* : calibration of error, $\rightarrow$ *probabilistic* forecasts
+ 
+ * *Optimization* : application-specific models and tools, attention to user objectives
+ 
+ * *Visualization/communication* : intelligence *actionable* in terms of user's decision problem
+
+### Realizing the promise of data-driven decision-making
+
+On prediction, data science gallops along: machine learning, classification, prediction, inference$\ldots$
+
+*Claim:* The promise of data science to empower data-driven decision-making lags its potential, because of insufficient focus on *complementary* analytics:
+
+ * Rigorous quantification of *uncertainty* and *error* in outputs of predictive models
+ * Accurate formal representation of decision problems -- including decision-maker's objectives and tolerance for risk
+ * Appropriate use of optimization techniques 
+ * Visualizations or other products customized to decision contexts
+ 
+ 
+
+*Goal:* Identify good *actions*, conditional on predictions made with error 
 
 
-## Introduction: The problem
+## The Cloud Hunter's Problem
 
-The Cloud Hunter’s basic problem is to decide how to allocate a limited budget of flight time over the course of a field season. 
+### Meet the Cloud Hunter
 
-Decisions must be made 1 day ahead, based on imperfect day-ahead forecasts of whether conditions are good or bad.
+The Cloud Hunter is an atmospheric scientist.
+
+The Cloud Hunter wants to collect data from inside *liquid boundary layer clouds*.
+
+```{r, out.width='50%', fig.align='center'}
+knitr::include_graphics(here('slides','graphics','ARM_with_boundary_layer_clouds.jpg'))
+```
+
+That takes aircraft. Which are expensive.
+
+### The Cloud Hunter's Decision Problem
+
+The Cloud Hunter’s Problem concerns how to allocate a fixed budget of flight hours between dates over the course of a field season. 
+
+Fly/No-fly decisions must be made 1 day ahead, based on imperfect day-ahead forecasts of whether conditions are good or bad for collecting required data.
+
+
 
 ###
 
-#### Their current decision-making process:
+#### Current decision-making process:
 
 ```{r, out.width='70%', fig.align='center'}
 knitr::include_graphics(here('slides','graphics','scientists_arguing.png'))
@@ -91,7 +139,7 @@ knitr::include_graphics(here('slides','graphics','scientists_arguing.png'))
 
 ###
 
-#### Our proposed decision-making process:
+#### Proposed decision-making process:
 
 ```{r, out.width='100%', fig.align='center'}
 knitr::include_graphics(here('slides','graphics','The_Creation_of_Adam.png'))
@@ -99,62 +147,93 @@ knitr::include_graphics(here('slides','graphics','The_Creation_of_Adam.png'))
 
 
 
-## Formal model of the decision problem
+## Formal model of the Cloud Hunter's decision problem
 
 
 
-### Model setup
+### Model setup: Conditions for data collection over the course of the field season
 
 $D$ : length of the field season in days
 
-$F \leq D$ : number of flights in the Cloud Hunter’s budget. 
-
 $d = D, \ldots, 1$ : index of dates
+
+$X_d$ : quality of conditions for data collection: 
+
+ * $X_d = 1$ if conditions on date $d$ are good, 0 otherwise
+ * Each $X_d$ a binary random state variable, i.e., a Bernoulli trial
+
+A field season is a particular realization $x_D, \ldots, x_1$ of the stochastic process 
+$X_D,\ldots, X_1$.
+
+Will assume the $X_d$ are independent and identically distributed (i.i.d.). 
+
+ * Assumption not actually required, but keeps things simpler and clearer.
+
+Vector notation: $\bf{X} =$$< X_D, \ldots, X_1>$ denotes the stochastic process; $\bf{x} =$$< x_D, \ldots, x_1>$ denotes a particular realization.
+
+### Model setup: Decisions, resource constraints
+
+$F \leq D$ : number of flights in the Cloud Hunter’s budget. 
 
 $f = F, \ldots, 1$ : index of flights remaining in budget
 
-$X_d$ : binary random state variable indicating quality of conditions for data collection: 
-
- * $X_d = 1$ if conditions on date $d$ are good, 0 otherwise
- * $x_d$ : realized value of $X_d$
-
-###
-
-$a_d$ :  binary control variable 
+$a_d$ :  binary control variables ("actions")
 
 * $a_d = 1$ iff they opt to fly on date $d$, 0 otherwise
 
-$\bf{X} =  < X_D, . . . , X_1>$ : conditions on dates $d = D, \ldots, 1$
+$\bf{a} =$$< a_D, \ldots, a_1>$ : actions chosen on dates $d = D, \ldots, 1$
 
-$\bf{a} =  < a_D, . . . , a_1>$ : actions chosen on dates $d = D, \ldots, 1$
+Resource constraint: $\sum_d a_d \leq F$.
+
+### Payoffs and objectives
+
+*Payoffs*: For a given sequence of choices $\bf{a}$ and realizations $\bf{x}$, the realized amount of data collected $U$ is given by 
+$$U = \bf{a \cdot x} = \sum_d a_d x_d$$.
+
+Assume: Flights left over at the end of the season have no residual value.
+
+*Decision-maker's objective*: Choose a fly/no-fly decision rule to maximize data collected in expection, subject to the resource constraint on total allowable flights:
+
+Choose $\bf{a}$ to $max_{\bf{a}} E[\bf{a} \cdot \bf{X}]$, subject to $\sum_d a_d \leq F$.
+
+\textbf{Important:} This is a *substantive assumption* about the decision-maker's goals.
+
+  * Models a decision-maker with a high tolerance for *risk*. 
 
 
-### Objectives
+### Forecasts
 
-
-
-Choose $\bf{a}$ to 
-$$max_{\bf{a}} E[\bf{a} \cdot \bf{X}]$$
-
-
-### Decision taken on basis of day-ahead forecast
+Decision taken on basis of a day-ahead forecast.
 
 Before taking each decision, decision-maker receives a forecast signal $s_d \in \mathbb{S}$.
 
-Based on a calibrated prediction model, can map this signal to a probability of good conditions:
+Calibration: map this signal to a probability of good conditions:
 
 $$p(s) =  \Pr\{X_d = 1 | s_d = s\}$$.
 
+(Will assume stationarity.)
 
-## Distribution of forecast signals
+### Distribution of forecast signals
 
-$\pi(s)$ : unconditional probability that forecast will take value $s$. 
+More than one day ahead, don't know which forecast signals $s \in \mathbb{S}$ will be received.
+
+But, *do* know the the likelihood of receiving different signals.
+
+$\pi(s)$ : probability that forecasting system will generate signal $s$. 
 
 $\pi(\cdot)$ defines a probability distribution over the set $\mathbb{S}$ of possible forecast signals.
 
-## Intertemporal optimization via dynamic programming
+### The task of the decision analyst
 
-### 
+Given this set-up, the job of the decision analyst is to devise an *optimal decision rule* $a^* = a(d,f |p)$ that delivers a recommended action---fly or no-fly---as a function of 
+
+ * $d$ the number of days left in the field season, 
+ * $f$ the number of flights left in the budget, and 
+ * $p(s)$ the forecast probability that a flight today would be successful.
+
+## Deriving a solution
+
+### Intertemporal optimization via dynamic programming
 
 ```{r, out.width='50%', fig.align='center', fig.cap='Graphical representation of the decision algorithm.'}
 knitr::include_graphics(here('slides','graphics','dynamic_programming_lattice.png'))

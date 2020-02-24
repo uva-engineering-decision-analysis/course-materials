@@ -1,0 +1,40 @@
+---
+title: 'Forecasting and the Value of Information'
+ # subtitle: ''
+author: "Arthur Small"
+institute: "Spring 2020" 
+date:   SYS 6014 Decision Analysis
+output:
+  beamer_presentation:
+ #   theme: "metropolis"
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structuresmallcapsserif"
+    toc: false
+    #toc_depth: 3
+    slide_level: 3
+    fig_width: 3.5
+    fig_height: 3
+    fig_caption: true
+    
+   # html_document:
+   #  toc: true
+   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r load packages, echo=FALSE, include=FALSE}
+library(here)
+```
+
+## Probabilistic Forecasting
+
+## Evaluating forecasts
+
+## T
+
+## Evaluating probabilistic forecasts: Scoring rules
+

@@ -1,8 +1,8 @@
-# History files
+# R session history files
 .Rhistory
 .Rapp.history
 
-# Session Data files
+# R session Data files
 .RData
 
 # Example code in package build process
@@ -31,6 +31,9 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+
+# Log files created by R markdown
+*.log
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/

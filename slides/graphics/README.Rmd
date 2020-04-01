@@ -10,7 +10,7 @@ output:
 ```{r, results ="asis", echo = FALSE}
 fig_files <- dir(pattern = "png$|jpg$") 
 
-cat(paste0("\n\n***\n\n **", fig_files, "**: \n\n***\n\n <center>![](", fig_files, ")</center>\n\n***\n\n"))
+cat(paste0("\n\n***\n\n**", fig_files, "**:\n\n***\n\n<center>![](", fig_files, ")</center>\n\n***\n\n"))
 
 # for(fig in fig_files){
 #   cat("\n\n*** \n\n")

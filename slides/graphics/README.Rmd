@@ -9,4 +9,14 @@ output:
 
 ```{r, results ="asis", echo = FALSE}
 fig_files <- dir(pattern = "png$|jpg$") 
-cat(paste0("* ", fig_files, " ![](", fig_files, ")\n"))
+
+# cat(paste("\n\n*** \n\n", fig_files, " ![](", fig_files, ")\n\n***\n\n"))
+
+for(fig in fig_files){
+  cat("\n\n*** \n\n")
+  #print(paste("![,](", fig, ")"))
+  cat(paste0("**",fig,"** :"))
+  cat("\n\n*** \n\n")
+  cat(paste0("<center>![](", fig,")</center>"))
+  cat("\n\n*** \n\n")
+}

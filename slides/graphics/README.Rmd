@@ -8,13 +8,14 @@ output:
 ## Graphics files included in this directory:
 
 ```{r include all figures, results ="asis", echo = FALSE}
-fig_files <- dir(pattern = "png$|jpg$") 
+graph_ext <- "(png|jpg|jpeg|gif|pdf)$"
 
-fig_paths <- paste0("./",fig_files)
+fig_files <- dir(pattern = graph_ext)
+
 
 #cat(paste0("* ", fig_files, " ![](",fig_paths,")\n"))
 
-cat(paste0("\n\n***\n\n**", fig_files, "**:<center>![](", fig_paths, ")</center>\n\n***\n\n"))
+cat(paste0("\n\n***\n\n**", fig_files, "**:<center>![](", fig_files, ")</center>\n\n***\n\n"))
 
 # for(fig in fig_files){
 #   cat("\n\n*** \n\n")

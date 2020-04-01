@@ -1,0 +1,12 @@
+---
+Title: "Graphics files included in this directory"
+output:
+  html_document:
+    fig_caption: yes
+    keep_md: yes
+---
+## Graphics files included in this directory:
+
+```{r, results ="asis", echo = FALSE}
+fig_files <- dir(pattern = "png$|jpg$") 
+cat(paste0("* ", fig_files, " ![](", fig_files, ")\n"))

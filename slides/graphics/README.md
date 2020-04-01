@@ -14,7 +14,7 @@ output:
 
 ***
 
-<center>![](algorithm_performance.png)</center>
+<center>![](./algorithm_performance.png)</center>
 
 ***
 
@@ -26,7 +26,7 @@ output:
 
 ***
 
-<center>![](ARM_with_boundary_layer_clouds.jpg)</center>
+<center>![](./ARM_with_boundary_layer_clouds.jpg)</center>
 
 ***
 
@@ -38,7 +38,7 @@ output:
 
 ***
 
-<center>![](Completing_the_forecast.jpg)</center>
+<center>![](./Completing_the_forecast.jpg)</center>
 
 ***
 
@@ -50,7 +50,7 @@ output:
 
 ***
 
-<center>![](conditional_distribution_SOM_state_1.png)</center>
+<center>![](./conditional_distribution_SOM_state_1.png)</center>
 
 ***
 
@@ -62,7 +62,7 @@ output:
 
 ***
 
-<center>![](dynamic_programming_lattice.png)</center>
+<center>![](./dynamic_programming_lattice.png)</center>
 
 ***
 
@@ -74,7 +74,7 @@ output:
 
 ***
 
-<center>![](Exp_beta_posterior.png)</center>
+<center>![](./Exp_beta_posterior.png)</center>
 
 ***
 
@@ -86,7 +86,7 @@ output:
 
 ***
 
-<center>![](hits_and_misses.png)</center>
+<center>![](./hits_and_misses.png)</center>
 
 ***
 
@@ -98,7 +98,7 @@ output:
 
 ***
 
-<center>![](Hoff_ch1_beta_moments.png)</center>
+<center>![](./Hoff_ch1_beta_moments.png)</center>
 
 ***
 
@@ -110,7 +110,7 @@ output:
 
 ***
 
-<center>![](Hoff_ch2_social_mobility.png)</center>
+<center>![](./Hoff_ch2_social_mobility.png)</center>
 
 ***
 
@@ -122,7 +122,7 @@ output:
 
 ***
 
-<center>![](Hoff_ch3_predictive_distribution.png)</center>
+<center>![](./Hoff_ch3_predictive_distribution.png)</center>
 
 ***
 
@@ -134,7 +134,7 @@ output:
 
 ***
 
-<center>![](Hoff_cover.png)</center>
+<center>![](./Hoff_cover.png)</center>
 
 ***
 
@@ -146,7 +146,7 @@ output:
 
 ***
 
-<center>![](Hoff_diabetes_model.png)</center>
+<center>![](./Hoff_diabetes_model.png)</center>
 
 ***
 
@@ -158,7 +158,7 @@ output:
 
 ***
 
-<center>![](Hoff_fig_1-1.png)</center>
+<center>![](./Hoff_fig_1-1.png)</center>
 
 ***
 
@@ -170,7 +170,7 @@ output:
 
 ***
 
-<center>![](Hoff_fig_1-2.png)</center>
+<center>![](./Hoff_fig_1-2.png)</center>
 
 ***
 
@@ -182,7 +182,7 @@ output:
 
 ***
 
-<center>![](Hoff_fig_1-3.png)</center>
+<center>![](./Hoff_fig_1-3.png)</center>
 
 ***
 
@@ -194,7 +194,7 @@ output:
 
 ***
 
-<center>![](Hoff_fig_1-4.png)</center>
+<center>![](./Hoff_fig_1-4.png)</center>
 
 ***
 
@@ -206,7 +206,7 @@ output:
 
 ***
 
-<center>![](Red_river_flood_1997.png)</center>
+<center>![](./Red_river_flood_1997.png)</center>
 
 ***
 
@@ -218,7 +218,7 @@ output:
 
 ***
 
-<center>![](scientists_arguing.jpg)</center>
+<center>![](./scientists_arguing.jpg)</center>
 
 ***
 
@@ -230,7 +230,7 @@ output:
 
 ***
 
-<center>![](SOM_grid_calibrated.png)</center>
+<center>![](./SOM_grid_calibrated.png)</center>
 
 ***
 
@@ -242,7 +242,7 @@ output:
 
 ***
 
-<center>![](SOM_grid_literal.png)</center>
+<center>![](./SOM_grid_literal.png)</center>
 
 ***
 
@@ -254,7 +254,7 @@ output:
 
 ***
 
-<center>![](The_Creation_of_Adam.jpg)</center>
+<center>![](./The_Creation_of_Adam.jpg)</center>
 
 ***
 
@@ -266,6 +266,6 @@ output:
 
 ***
 
-<center>![](value_function.png)</center>
+<center>![](./value_function.png)</center>
 
 ***

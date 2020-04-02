@@ -1,0 +1,26 @@
+---
+Title: "Graphics files included in this directory"
+output:
+  html_document:
+    fig_caption: yes
+    keep_md: yes
+---
+## Graphics files included in this directory:
+
+```{r include all figures, results ="asis", echo = FALSE}
+graph_ext <- "(png|jpg|jpeg|gif|pdf)$"
+
+fig_files <- dir(pattern = graph_ext)
+
+#cat(paste0("\n\n***\n\n**", fig_files, "**:<center>![](", fig_files, ")</center>\n\n***\n\n"))
+cat(paste0("\n\n***\n\n##### ", fig_files, "\n\n***\n\n<center>![](", fig_files, ")</center>\n\n***\n\n"))
+
+# for(fig in fig_files){
+#   cat("\n\n*** \n\n")
+#   #print(paste("![,](", fig, ")"))
+#   cat(paste0("**",fig,"** :"))
+#   cat("\n\n*** \n\n")
+#   cat(paste0("<center>![](", fig,")</center>"))
+#   cat("\n\n*** \n\n")
+# }
+```

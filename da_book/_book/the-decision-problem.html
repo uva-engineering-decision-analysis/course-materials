@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 The decision problem | Introduction to Decision Analysis</title>
+  <meta name="description" content="An introduction to decision analysis, based on statistical decision theory, with examples." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 The decision problem | Introduction to Decision Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An introduction to decision analysis, based on statistical decision theory, with examples." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 The decision problem | Introduction to Decision Analysis" />
+  
+  <meta name="twitter:description" content="An introduction to decision analysis, based on statistical decision theory, with examples." />
+  
+
+<meta name="author" content="Arthur Small" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="formalism.html"/>
+<link rel="next" href="formalism-1.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#data-driven-decision-making"><i class="fa fa-check"></i><b>1.1</b> Data-driven decision-making</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#data-driven-decision-making-motivations"><i class="fa fa-check"></i><b>1.1.1</b> Data-driven decision-making: Motivations</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#the-general-form-of-the-problems-well-take-up"><i class="fa fa-check"></i><b>1.1.2</b> The general form of the problems we’ll take up</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#building-decision-models"><i class="fa fa-check"></i><b>1.1.3</b> Building decision models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#formalism-for-statistical-decision-models"><i class="fa fa-check"></i><b>1.2</b> Formalism for statistical decision models</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#actions"><i class="fa fa-check"></i><b>1.2.1</b> Actions</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#states"><i class="fa fa-check"></i><b>1.2.2</b> States</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#random-states"><i class="fa fa-check"></i><b>1.2.3</b> Random states</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#random-variables"><i class="fa fa-check"></i><b>1.2.4</b> Random variables</a></li>
+<li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#random-states-1"><i class="fa fa-check"></i><b>1.2.5</b> Random states</a></li>
+<li class="chapter" data-level="1.2.6" data-path="index.html"><a href="index.html#parameters"><i class="fa fa-check"></i><b>1.2.6</b> Parameters</a></li>
+<li class="chapter" data-level="1.2.7" data-path="index.html"><a href="index.html#payoffs"><i class="fa fa-check"></i><b>1.2.7</b> Payoffs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#statistical-decision-theory"><i class="fa fa-check"></i><b>1.3</b> Statistical decision theory</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#formalism-for-statistical-decision-models-1"><i class="fa fa-check"></i><b>1.3.1</b> Formalism for statistical decision models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#review"><i class="fa fa-check"></i><b>1.4</b> Review</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#big-picture-how-to-make-optimal-choices-under-statistical-uncertainty"><i class="fa fa-check"></i><b>1.4.1</b> Big picture: How to make optimal choices under statistical uncertainty?</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#uncertainty"><i class="fa fa-check"></i><b>1.4.2</b> Uncertainty</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#optimal-choice"><i class="fa fa-check"></i><b>1.4.3</b> Optimal choice</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#optimization-defining-objectives"><i class="fa fa-check"></i><b>1.4.4</b> Optimization: Defining objectives</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#integrating-predictive-and-inferential-tools-into-the-decision-calculus"><i class="fa fa-check"></i><b>1.4.5</b> Integrating predictive and inferential tools into the decision calculus</a></li>
+<li class="chapter" data-level="1.4.6" data-path="index.html"><a href="index.html#payoff-functions-define-in-terms-of-x-state-or-theta-parameter-value"><i class="fa fa-check"></i><b>1.4.6</b> Payoff functions: Define in terms of <span class="math inline">\(x\)</span> (state) or <span class="math inline">\(\theta\)</span> (parameter value)?</a></li>
+<li class="chapter" data-level="1.4.7" data-path="index.html"><a href="index.html#parameter-dependent-payoffs-as-reduced-form-of-state-dependent-payoffs"><i class="fa fa-check"></i><b>1.4.7</b> Parameter-dependent payoffs as reduced form of state-dependent payoffs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="additional-notes.html"><a href="additional-notes.html"><i class="fa fa-check"></i><b>2</b> Additional notes</a></li>
+<li class="chapter" data-level="3" data-path="prediction.html"><a href="prediction.html"><i class="fa fa-check"></i><b>3</b> Prediction</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="prediction.html"><a href="prediction.html#big-picture-data-driven-decision-making"><i class="fa fa-check"></i><b>3.0.1</b> Big picture: data-driven decision-making</a></li>
+<li class="chapter" data-level="3.0.2" data-path="prediction.html"><a href="prediction.html#predictive-models"><i class="fa fa-check"></i><b>3.0.2</b> Predictive models</a></li>
+<li class="chapter" data-level="3.0.3" data-path="prediction.html"><a href="prediction.html#probabilistic-predictions"><i class="fa fa-check"></i><b>3.0.3</b> Probabilistic predictions</a></li>
+<li class="chapter" data-level="3.1" data-path="prediction.html"><a href="prediction.html#bayesian-methods"><i class="fa fa-check"></i><b>3.1</b> Bayesian Methods</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="prediction.html"><a href="prediction.html#reminder-example-conditional-probabilities"><i class="fa fa-check"></i><b>3.1.1</b> Reminder example: conditional probabilities</a></li>
+<li class="chapter" data-level="3.1.2" data-path="prediction.html"><a href="prediction.html#section"><i class="fa fa-check"></i><b>3.1.2</b> </a></li>
+<li class="chapter" data-level="3.1.3" data-path="prediction.html"><a href="prediction.html#bayesian-methods-introduction-via-simple-example"><i class="fa fa-check"></i><b>3.1.3</b> Bayesian methods: Introduction via simple example</a></li>
+<li class="chapter" data-level="3.1.4" data-path="prediction.html"><a href="prediction.html#sampling-model"><i class="fa fa-check"></i><b>3.1.4</b> Sampling model</a></li>
+<li class="chapter" data-level="3.1.5" data-path="prediction.html"><a href="prediction.html#section-1"><i class="fa fa-check"></i><b>3.1.5</b> </a></li>
+<li class="chapter" data-level="3.1.6" data-path="prediction.html"><a href="prediction.html#section-2"><i class="fa fa-check"></i><b>3.1.6</b> </a></li>
+<li class="chapter" data-level="3.1.7" data-path="prediction.html"><a href="prediction.html#prior-information"><i class="fa fa-check"></i><b>3.1.7</b> Prior information</a></li>
+<li class="chapter" data-level="3.1.8" data-path="prediction.html"><a href="prediction.html#the-beta-distribution"><i class="fa fa-check"></i><b>3.1.8</b> The Beta distribution</a></li>
+<li class="chapter" data-level="3.1.9" data-path="prediction.html"><a href="prediction.html#section-3"><i class="fa fa-check"></i><b>3.1.9</b> </a></li>
+<li class="chapter" data-level="3.1.10" data-path="prediction.html"><a href="prediction.html#section-4"><i class="fa fa-check"></i><b>3.1.10</b> </a></li>
+<li class="chapter" data-level="3.1.11" data-path="prediction.html"><a href="prediction.html#bayes-theorem"><i class="fa fa-check"></i><b>3.1.11</b> Bayes Theorem</a></li>
+<li class="chapter" data-level="3.1.12" data-path="prediction.html"><a href="prediction.html#section-5"><i class="fa fa-check"></i><b>3.1.12</b> </a></li>
+<li class="chapter" data-level="3.1.13" data-path="prediction.html"><a href="prediction.html#section-6"><i class="fa fa-check"></i><b>3.1.13</b> </a></li>
+<li class="chapter" data-level="3.1.14" data-path="prediction.html"><a href="prediction.html#sensitivity-analysis"><i class="fa fa-check"></i><b>3.1.14</b> Sensitivity analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="prediction.html"><a href="prediction.html#building-a-predictive-model"><i class="fa fa-check"></i><b>3.2</b> Building a predictive model</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="prediction.html"><a href="prediction.html#section-7"><i class="fa fa-check"></i><b>3.2.1</b> </a></li>
+<li class="chapter" data-level="3.2.2" data-path="prediction.html"><a href="prediction.html#section-8"><i class="fa fa-check"></i><b>3.2.2</b> </a></li>
+<li class="chapter" data-level="3.2.3" data-path="prediction.html"><a href="prediction.html#section-9"><i class="fa fa-check"></i><b>3.2.3</b> </a></li>
+<li class="chapter" data-level="3.2.4" data-path="prediction.html"><a href="prediction.html#prediction-via-the-predictive-distribution"><i class="fa fa-check"></i><b>3.2.4</b> Prediction via the predictive distribution</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html"><i class="fa fa-check"></i><b>4</b> Forecast evaluation</a><ul>
+<li class="chapter" data-level="4.1" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html#evaluating-forecasting-systems-scoring-rules"><i class="fa fa-check"></i><b>4.1</b> Evaluating forecasting systems: Scoring rules</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html#q-how-good-is-your-forecasting-system"><i class="fa fa-check"></i><b>4.1.1</b> Q: “How good is your forecasting system?”</a></li>
+<li class="chapter" data-level="4.1.2" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html#but-is-it-really"><i class="fa fa-check"></i><b>4.1.2</b> But is it really?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-value-of-information.html"><a href="the-value-of-information.html"><i class="fa fa-check"></i><b>5</b> The Value of Information</a></li>
+<li class="chapter" data-level="6" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html"><i class="fa fa-check"></i><b>6</b> Example decision problem: Whether to buy refrigeration</a></li>
+<li class="chapter" data-level="7" data-path="formalism.html"><a href="formalism.html"><i class="fa fa-check"></i><b>7</b> Formalism</a><ul>
+<li class="chapter" data-level="7.1" data-path="formalism.html"><a href="formalism.html#action-set"><i class="fa fa-check"></i><b>7.1</b> Action set</a></li>
+<li class="chapter" data-level="7.2" data-path="formalism.html"><a href="formalism.html#payoffs-the-loss-function"><i class="fa fa-check"></i><b>7.2</b> Payoffs: The loss function</a></li>
+<li class="chapter" data-level="7.3" data-path="formalism.html"><a href="formalism.html#uncertainty-1"><i class="fa fa-check"></i><b>7.3</b> Uncertainty</a></li>
+<li class="chapter" data-level="7.4" data-path="formalism.html"><a href="formalism.html#decision-criterion"><i class="fa fa-check"></i><b>7.4</b> Decision criterion</a></li>
+<li class="chapter" data-level="7.5" data-path="formalism.html"><a href="formalism.html#simulation-of-the-prediction-process-no-covariates"><i class="fa fa-check"></i><b>7.5</b> Simulation of the prediction process, no covariates</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="the-decision-problem.html"><a href="the-decision-problem.html"><i class="fa fa-check"></i><b>8</b> The decision problem</a></li>
+<li class="chapter" data-level="9" data-path="formalism-1.html"><a href="formalism-1.html"><i class="fa fa-check"></i><b>9</b> Formalism</a><ul>
+<li class="chapter" data-level="9.1" data-path="formalism-1.html"><a href="formalism-1.html#action-set-1"><i class="fa fa-check"></i><b>9.1</b> Action set</a></li>
+<li class="chapter" data-level="9.2" data-path="formalism-1.html"><a href="formalism-1.html#payoffs-the-loss-function-1"><i class="fa fa-check"></i><b>9.2</b> Payoffs: The loss function</a></li>
+<li class="chapter" data-level="9.3" data-path="formalism-1.html"><a href="formalism-1.html#uncertainty-2"><i class="fa fa-check"></i><b>9.3</b> Uncertainty</a></li>
+<li class="chapter" data-level="9.4" data-path="formalism-1.html"><a href="formalism-1.html#decision-criterion-1"><i class="fa fa-check"></i><b>9.4</b> Decision criterion</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="statistical-forecasting-model.html"><a href="statistical-forecasting-model.html"><i class="fa fa-check"></i><b>10</b> Statistical forecasting model</a><ul>
+<li class="chapter" data-level="10.1" data-path="statistical-forecasting-model.html"><a href="statistical-forecasting-model.html#historical-data"><i class="fa fa-check"></i><b>10.1</b> Historical data</a></li>
+<li class="chapter" data-level="10.2" data-path="statistical-forecasting-model.html"><a href="statistical-forecasting-model.html#model-of-the-data-generating-process"><i class="fa fa-check"></i><b>10.2</b> Model of the data generating process</a></li>
+<li class="chapter" data-level="10.3" data-path="statistical-forecasting-model.html"><a href="statistical-forecasting-model.html#comments-on-this-statistical-model-the-risk-of-model-mis-specification"><i class="fa fa-check"></i><b>10.3</b> Comments on this statistical model: The risk of model mis-specification</a></li>
+<li class="chapter" data-level="10.4" data-path="statistical-forecasting-model.html"><a href="statistical-forecasting-model.html#simulation-of-the-prediction-process-no-covariates-1"><i class="fa fa-check"></i><b>10.4</b> Simulation of the prediction process, no covariates</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="using-a-forecast.html"><a href="using-a-forecast.html"><i class="fa fa-check"></i><b>11</b> Using a forecast</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Decision Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-decision-problem" class="section level1">
+<h1><span class="header-section-number">8</span> The decision problem</h1>
+<p>A pub owner in Charlottesville plans to sell beer outside on St. Patrick’s Day, March 17. The pub owner must decide whether to arrange to rent a supplemental refrigeration system for the day.</p>
+<p>Supplemental refrigeration offers a form of insurance. If temperatures outside on March 17 are high and the pub owner has not arranged supplemental refrigeration, she will be left with warm beer that she will have difficulty selling, leading to financial losses. Conversely, if she pays for supplemental refrigeration when temperatures are low, she will have incurred an unnecessary expense.</p>
+<p>The analysis here uses statistical decision theory to generate a recommendation about whether or not to pay to rent a supplemental refrigeration system, in order to insure against the potential of financial losses in case of high temperatures.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="formalism.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="formalism-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

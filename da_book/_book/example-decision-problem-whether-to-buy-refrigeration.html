@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Example decision problem: Whether to buy refrigeration | Decision Analysis: Semi-organized notes</title>
+  <meta name="description" content="An introduction to decision analysis, based on statistical decision theory, with examples." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Example decision problem: Whether to buy refrigeration | Decision Analysis: Semi-organized notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An introduction to decision analysis, based on statistical decision theory, with examples." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Example decision problem: Whether to buy refrigeration | Decision Analysis: Semi-organized notes" />
+  
+  <meta name="twitter:description" content="An introduction to decision analysis, based on statistical decision theory, with examples." />
+  
+
+<meta name="author" content="Arthur Small" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-value-of-information.html"/>
+<link rel="next" href="the-decision-tool-project.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#motivation-data-driven-decision-making"><i class="fa fa-check"></i><b>1.1</b> Motivation: Data-driven decision-making</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-general-form-of-the-problems-well-take-up"><i class="fa fa-check"></i><b>1.2</b> The general form of the problems we’ll take up</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#building-decision-models"><i class="fa fa-check"></i><b>1.3</b> Building decision models</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html"><i class="fa fa-check"></i><b>2</b> Formalism for statistical decision models</a><ul>
+<li class="chapter" data-level="2.1" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#actions"><i class="fa fa-check"></i><b>2.1</b> Actions</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#example"><i class="fa fa-check"></i><b>2.1.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#states"><i class="fa fa-check"></i><b>2.2</b> States</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#example-1"><i class="fa fa-check"></i><b>2.2.1</b> Example</a></li>
+<li class="chapter" data-level="2.2.2" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#representing-uncertain-states-as-random-variables"><i class="fa fa-check"></i><b>2.2.2</b> Representing uncertain states as random variables</a></li>
+<li class="chapter" data-level="2.2.3" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#random-variables"><i class="fa fa-check"></i><b>2.2.3</b> Random variables</a></li>
+<li class="chapter" data-level="2.2.4" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#random-states"><i class="fa fa-check"></i><b>2.2.4</b> Random states</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#parameters"><i class="fa fa-check"></i><b>2.3</b> Parameters</a></li>
+<li class="chapter" data-level="2.4" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#payoffs"><i class="fa fa-check"></i><b>2.4</b> Payoffs</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="formalism-for-statistical-decision-models.html"><a href="formalism-for-statistical-decision-models.html#payoffs-as-a-function-of-action-and-state"><i class="fa fa-check"></i><b>2.4.1</b> Payoffs as a function of action and state</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="statistical-decision-theory.html"><a href="statistical-decision-theory.html"><i class="fa fa-check"></i><b>3</b> Statistical decision theory</a><ul>
+<li class="chapter" data-level="3.1" data-path="statistical-decision-theory.html"><a href="statistical-decision-theory.html#formalism-for-statistical-decision-models-1"><i class="fa fa-check"></i><b>3.1</b> Formalism for statistical decision models</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="review.html"><a href="review.html"><i class="fa fa-check"></i><b>4</b> Review</a><ul>
+<li class="chapter" data-level="4.1" data-path="review.html"><a href="review.html#big-picture-how-to-make-optimal-choices-under-statistical-uncertainty"><i class="fa fa-check"></i><b>4.1</b> Big picture: How to make optimal choices under statistical uncertainty?</a></li>
+<li class="chapter" data-level="4.2" data-path="review.html"><a href="review.html#uncertainty"><i class="fa fa-check"></i><b>4.2</b> Uncertainty</a></li>
+<li class="chapter" data-level="4.3" data-path="review.html"><a href="review.html#optimal-choice"><i class="fa fa-check"></i><b>4.3</b> Optimal choice</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="review.html"><a href="review.html#optimization-defining-objectives"><i class="fa fa-check"></i><b>4.3.1</b> Optimization: Defining objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="review.html"><a href="review.html#integrating-predictive-and-inferential-tools-into-the-decision-calculus"><i class="fa fa-check"></i><b>4.4</b> Integrating predictive and inferential tools into the decision calculus</a></li>
+<li class="chapter" data-level="4.5" data-path="review.html"><a href="review.html#payoff-functions-define-in-terms-of-x-state-or-theta-parameter-value"><i class="fa fa-check"></i><b>4.5</b> Payoff functions: Define in terms of <span class="math inline">\(x\)</span> (state) or <span class="math inline">\(\theta\)</span> (parameter value)?</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="review.html"><a href="review.html#parameter-dependent-payoffs-as-reduced-form-of-state-dependent-payoffs"><i class="fa fa-check"></i><b>4.5.1</b> Parameter-dependent payoffs as reduced form of state-dependent payoffs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prediction.html"><a href="prediction.html"><i class="fa fa-check"></i><b>5</b> Prediction</a><ul>
+<li class="chapter" data-level="5.1" data-path="prediction.html"><a href="prediction.html#big-picture-data-driven-decision-making"><i class="fa fa-check"></i><b>5.1</b> Big picture: data-driven decision-making</a></li>
+<li class="chapter" data-level="5.2" data-path="prediction.html"><a href="prediction.html#predictive-models"><i class="fa fa-check"></i><b>5.2</b> Predictive models</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bayesian-methods.html"><a href="bayesian-methods.html"><i class="fa fa-check"></i><b>6</b> Bayesian Methods</a><ul>
+<li class="chapter" data-level="6.1" data-path="bayesian-methods.html"><a href="bayesian-methods.html#reminder-example-conditional-probabilities"><i class="fa fa-check"></i><b>6.1</b> Reminder example: conditional probabilities</a></li>
+<li class="chapter" data-level="6.2" data-path="bayesian-methods.html"><a href="bayesian-methods.html#bayesian-methods-introduction-via-simple-example"><i class="fa fa-check"></i><b>6.2</b> Bayesian methods: Introduction via simple example</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="bayesian-methods.html"><a href="bayesian-methods.html#sampling-model"><i class="fa fa-check"></i><b>6.2.1</b> Sampling model</a></li>
+<li class="chapter" data-level="6.2.2" data-path="bayesian-methods.html"><a href="bayesian-methods.html#prior-information"><i class="fa fa-check"></i><b>6.2.2</b> Prior information</a></li>
+<li class="chapter" data-level="6.2.3" data-path="bayesian-methods.html"><a href="bayesian-methods.html#the-beta-distribution"><i class="fa fa-check"></i><b>6.2.3</b> The Beta distribution</a></li>
+<li class="chapter" data-level="6.2.4" data-path="bayesian-methods.html"><a href="bayesian-methods.html#section-1"><i class="fa fa-check"></i><b>6.2.4</b> </a></li>
+<li class="chapter" data-level="6.2.5" data-path="bayesian-methods.html"><a href="bayesian-methods.html#section-2"><i class="fa fa-check"></i><b>6.2.5</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="bayesian-methods.html"><a href="bayesian-methods.html#bayes-theorem"><i class="fa fa-check"></i><b>6.3</b> Bayes Theorem</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="bayesian-methods.html"><a href="bayesian-methods.html#section-3"><i class="fa fa-check"></i><b>6.3.1</b> </a></li>
+<li class="chapter" data-level="6.3.2" data-path="bayesian-methods.html"><a href="bayesian-methods.html#section-4"><i class="fa fa-check"></i><b>6.3.2</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="bayesian-methods.html"><a href="bayesian-methods.html#sensitivity-analysis"><i class="fa fa-check"></i><b>6.4</b> Sensitivity analysis</a></li>
+<li class="chapter" data-level="6.5" data-path="bayesian-methods.html"><a href="bayesian-methods.html#building-a-predictive-model"><i class="fa fa-check"></i><b>6.5</b> Building a predictive model</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="bayesian-methods.html"><a href="bayesian-methods.html#section-5"><i class="fa fa-check"></i><b>6.5.1</b> </a></li>
+<li class="chapter" data-level="6.5.2" data-path="bayesian-methods.html"><a href="bayesian-methods.html#section-6"><i class="fa fa-check"></i><b>6.5.2</b> </a></li>
+<li class="chapter" data-level="6.5.3" data-path="bayesian-methods.html"><a href="bayesian-methods.html#section-7"><i class="fa fa-check"></i><b>6.5.3</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="bayesian-methods.html"><a href="bayesian-methods.html#prediction-via-the-predictive-distribution"><i class="fa fa-check"></i><b>6.6</b> Prediction via the predictive distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html"><i class="fa fa-check"></i><b>7</b> Forecast evaluation</a><ul>
+<li class="chapter" data-level="7.1" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html#evaluating-forecasting-systems-scoring-rules"><i class="fa fa-check"></i><b>7.1</b> Evaluating forecasting systems: Scoring rules</a></li>
+<li class="chapter" data-level="7.2" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html#q-how-good-is-your-forecasting-system"><i class="fa fa-check"></i><b>7.2</b> Q: “How good is your forecasting system?”</a></li>
+<li class="chapter" data-level="7.3" data-path="forecast-evaluation.html"><a href="forecast-evaluation.html#but-is-it-really"><i class="fa fa-check"></i><b>7.3</b> But is it really?</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="the-value-of-information.html"><a href="the-value-of-information.html"><i class="fa fa-check"></i><b>8</b> The Value of Information</a></li>
+<li class="chapter" data-level="9" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html"><i class="fa fa-check"></i><b>9</b> Example decision problem: Whether to buy refrigeration</a><ul>
+<li class="chapter" data-level="9.1" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#formalism-for-the-refrigeration-example"><i class="fa fa-check"></i><b>9.1</b> Formalism for the refrigeration example</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#action-set"><i class="fa fa-check"></i><b>9.1.1</b> Action set</a></li>
+<li class="chapter" data-level="9.1.2" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#payoffs-the-loss-function"><i class="fa fa-check"></i><b>9.1.2</b> Payoffs: The loss function</a></li>
+<li class="chapter" data-level="9.1.3" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#uncertainty-1"><i class="fa fa-check"></i><b>9.1.3</b> Uncertainty</a></li>
+<li class="chapter" data-level="9.1.4" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#decision-criterion"><i class="fa fa-check"></i><b>9.1.4</b> Decision criterion</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#statistical-forecasting-model"><i class="fa fa-check"></i><b>9.2</b> Statistical forecasting model</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#historical-data"><i class="fa fa-check"></i><b>9.2.1</b> Historical data</a></li>
+<li class="chapter" data-level="9.2.2" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#model-of-the-data-generating-process"><i class="fa fa-check"></i><b>9.2.2</b> Model of the data generating process</a></li>
+<li class="chapter" data-level="9.2.3" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#comments-on-this-statistical-model-the-risk-of-model-mis-specification"><i class="fa fa-check"></i><b>9.2.3</b> Comments on this statistical model: The risk of model mis-specification</a></li>
+<li class="chapter" data-level="9.2.4" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#simulation-of-the-prediction-process-no-covariates"><i class="fa fa-check"></i><b>9.2.4</b> Simulation of the prediction process, no covariates</a></li>
+<li class="chapter" data-level="9.2.5" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#using-a-forecast"><i class="fa fa-check"></i><b>9.2.5</b> Using a forecast</a></li>
+<li class="chapter" data-level="9.2.6" data-path="example-decision-problem-whether-to-buy-refrigeration.html"><a href="example-decision-problem-whether-to-buy-refrigeration.html#simulation-of-the-prediction-process-one-covariate"><i class="fa fa-check"></i><b>9.2.6</b> Simulation of the prediction process, one covariate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="the-decision-tool-project.html"><a href="the-decision-tool-project.html"><i class="fa fa-check"></i><b>10</b> The Decision Tool Project</a><ul>
+<li class="chapter" data-level="10.1" data-path="the-decision-tool-project.html"><a href="the-decision-tool-project.html#assignment-1-concept-note"><i class="fa fa-check"></i><b>10.1</b> Assignment 1: Concept Note</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Decision Analysis: Semi-organized notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="example-decision-problem-whether-to-buy-refrigeration" class="section level1">
+<h1><span class="header-section-number">9</span> Example decision problem: Whether to buy refrigeration</h1>
+<p>A pub owner in Charlottesville plans to sell beer outside on St. Patrick’s Day, March 17. The pub owner must decide whether to arrange to rent a supplemental refrigeration system for the day.</p>
+<p>Supplemental refrigeration offers a form of insurance. If temperatures outside on March 17 are high and the pub owner has not arranged supplemental refrigeration, she will be left with warm beer that she will have difficulty selling, leading to financial losses. Conversely, if she pays for supplemental refrigeration when temperatures are low, she will have incurred an unnecessary expense.</p>
+<p>The analysis here uses statistical decision theory to generate a recommendation about whether or not to pay to rent a supplemental refrigeration system, in order to insure against the potential of financial losses in case of high temperatures.</p>
+<div id="formalism-for-the-refrigeration-example" class="section level2">
+<h2><span class="header-section-number">9.1</span> Formalism for the refrigeration example</h2>
+<div id="action-set" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> Action set</h3>
+<p>The action set <span class="math inline">\(\mathbb{A}\)</span> includes just two elements: <span class="math inline">\(\mathbb{A} = \{a_1, a_2\}\)</span>, where <span class="math inline">\(a_1\)</span> and <span class="math inline">\(a_2\)</span> correspond to the decsions to not purchase insurance, and to purchase insurance, respectively.</p>
+</div>
+<div id="payoffs-the-loss-function" class="section level3">
+<h3><span class="header-section-number">9.1.2</span> Payoffs: The loss function</h3>
+<p>Let <span class="math inline">\(L(a,y)\)</span> denote the losses incurred by the publican. These depend on the action chosen, and on <span class="math inline">\(y\)</span>, the high temperature in Charlotteville on March 17, measured in degrees Celsius.</p>
+<p>If temperature risks are uninsured (<span class="math inline">\(a = a_1\)</span>), losses increase linearly with temperature for temperatures above a threshold level <span class="math inline">\(\underline{y}\)</span>:
+if <span class="math inline">\(y &gt; \underline{y}\)</span>,</p>
+<p><span class="math display">\[ L(a_1,y) =   \left\{
+\begin{array}{ll}
+      0                     &amp; y \leq \underline{y} \\
+      c_1 (y-\underline{y}) &amp; y &gt; \underline{y} \\
+\end{array} 
+\right.  \]</span></p>
+<p>for some constant <span class="math inline">\(c_1 &gt; 0\)</span>.</p>
+</div>
+<div id="uncertainty-1" class="section level3">
+<h3><span class="header-section-number">9.1.3</span> Uncertainty</h3>
+<p>Arrangements to arrange supplemental refrigeration must be locked in two weeks in advance, before temperatures are known. Let <span class="math inline">\(Y\)</span> denote the random temperature.</p>
+</div>
+<div id="decision-criterion" class="section level3">
+<h3><span class="header-section-number">9.1.4</span> Decision criterion</h3>
+<p>The pub owner is risk-neutral. Her decision criterion is: choose the action that minimizes losses in expectation:</p>
+<p><span class="math display">\[ a^* = \underset{a \in \mathbb{A}}{\operatorname{argmin}}{\,} E[L(a,Y)]\]</span>
+where the expectation is taken over the distiribution of <span class="math inline">\(Y\)</span>. This distribution represents the information about uncertain temperatures that the decision-maker has available at the time of she must make her decision.</p>
+<p>To operationalize this model and derive an optimal solution requires building a system for generating a probabilistic forecast for temperatures on March 17.</p>
+</div>
+</div>
+<div id="statistical-forecasting-model" class="section level2">
+<h2><span class="header-section-number">9.2</span> Statistical forecasting model</h2>
+<p>At a two-week time horizon, temperature forecasts based on numerical weather prediction models are not reliable. Instead, a statistical forecasting model is used.</p>
+<div id="historical-data" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Historical data</h3>
+<p>Let <span class="math inline">\(y_1, \ldots, y_n\)</span> denote the high temperature in Charlottesville on March 17 for each of the previous <span class="math inline">\(n\)</span> years.</p>
+</div>
+<div id="model-of-the-data-generating-process" class="section level3">
+<h3><span class="header-section-number">9.2.2</span> Model of the data generating process</h3>
+<p>It is supposed that these data were generated as independent, identically distributed random draws from a normal distribution: for <span class="math inline">\(i = 1, \ldots, n\)</span>,</p>
+<p><span class="math display">\[y_i = \theta + \varepsilon_i\]</span>
+where <span class="math inline">\(\theta\)</span> denotes the true but unobserved value of the long-run average temperature, and where <span class="math inline">\(\varepsilon_i \sim N(0, \sigma^2_\varepsilon)\)</span>.</p>
+</div>
+<div id="comments-on-this-statistical-model-the-risk-of-model-mis-specification" class="section level3">
+<h3><span class="header-section-number">9.2.3</span> Comments on this statistical model: The risk of model mis-specification</h3>
+<p>This model asserts several substantive assumptions about the data generating process.</p>
+<ul>
+<li><p>The process is assumed to be <em>stationary</em>. There is no upward trend over time, no long-term climate change, etc.</p></li>
+<li><p>Temperatures are assumed to be <em>independent</em> from one year to the next. In particular, there is no <em>autocorrelation</em>. Knowing that one year’s temperature was unusually high (say) provides no information about the likelihood that next year’s temperature will also be unusually high. Inter-annual climate cycles (e.g., due to <span class="math inline">\(El\ Ni\tilde{n}o\)</span>) are ruled out.</p></li>
+<li><p>Temperature variations around the long-run average are assumed to be <em>identically distributed</em>. This assumption rules out the possibility that variance is, say, greater when temperatures are higher than when they are lower.</p></li>
+</ul>
+<p>And others.</p>
+<p>In general, it is important to formulate a statistical model that accurately reflects the true characteristics of the underlying data generating process.</p>
+<p>When your statistical model is mis-specified, your probabilistic forecast of future events are likely to stray from the true underlying probabilities. Model mis-specification can then lead to inaccurate estimates of the distribution of losses for each possible action. This error may in turn lead to selection of a sub-optimal action.</p>
+<p>A particular problem to guard against is the possibility to underestimate the likelihood of extreme events that could cause catastrophic losses.</p>
+<p>That said, your time on this Earth is limited. Depending on the decision problem and the stakes involved, refining your model to get sharper loss estimates may or may not be worth the bother.</p>
+<p>A reasonable approach is to start by first writing down a simple forecasting model that appears to capture the essence of the process as you understand it. On the basis of this simple model, generate first-cut probabilistic forecasts of uncertain events. Use these to generate estimated distributions of losses for each possible action in your action set. On that basis, use the specified decision criterion to derive an initial optimal decision rule.</p>
+<p>Then, go back and check things over more carefully. Review the realism of your statistical model, given your understanding of data generating process. Plot and examine the distribution of your prediction errors. Do your prediction errors appear to follow a pattern that matches what you would expect, given the assumptions you have made?</p>
+<p>If you find evidence that your prediction model is mis-specified, it may be worth it to go back and refine your model, and see if you generate different results.</p>
+<p>One very good idea is to perform a <em>sensitivity analysis</em>. How sensitive are your decision recommendations and outcomes to the assumptions you’ve built into your statistical model? If you are not highly confident in your statistical assumptions, and if those assumptions turn out to matter a lot for your recommendations and outcomes, then it could very well be worth the bother to revisit those assumptions, and investigate alternatives.</p>
+<p>On the other hand, if your decision recommendations are not highly sensitive to your statistical assumptions, then keeping your initial model may be defensible. The point of this work is <em>not</em> to build the best possible prediction system, bullet-proof against any statistical criticism. The point is to help people make good decisions – or at least, decisiions better than they would have made otherwise. Your time and other resources are limited. A good-enough model may be good enough.</p>
+</div>
+<div id="simulation-of-the-prediction-process-no-covariates" class="section level3">
+<h3><span class="header-section-number">9.2.4</span> Simulation of the prediction process, no covariates</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">set.seed</span>(<span class="dv">1</span>)       <span class="co"># Keeps random data from changing each time the code is run</span></a>
+<a class="sourceLine" id="cb11-2" title="2"></a>
+<a class="sourceLine" id="cb11-3" title="3">theta &lt;-<span class="st">  </span><span class="dv">18</span>      <span class="co"># True long-run average temp</span></a>
+<a class="sourceLine" id="cb11-4" title="4">sigma  &lt;-<span class="st">  </span><span class="dv">3</span>      <span class="co"># True stnd dev of temp around this mean</span></a>
+<a class="sourceLine" id="cb11-5" title="5">n      &lt;-<span class="st"> </span><span class="dv">20</span>      <span class="co"># number of simulated historical data points</span></a>
+<a class="sourceLine" id="cb11-6" title="6"></a>
+<a class="sourceLine" id="cb11-7" title="7">y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n,theta,sigma)</a>
+<a class="sourceLine" id="cb11-8" title="8"></a>
+<a class="sourceLine" id="cb11-9" title="9"><span class="kw">hist</span>(y, <span class="dt">breaks =</span> <span class="dv">10</span>, <span class="dt">main =</span> <span class="st">&quot;Histogram of historical temperatures in degrees C&quot;</span>)</a></code></pre></div>
+<p><img src="_main_files/figure-html/simulate%20historical%20data%20-%20no%20covariates-1.png" width="672" /></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">boxplot</span>(y)</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># c0 &lt;- 18     # Threshold temperature for losses</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="co"># c1 &lt;- 1000   # Loss per degree above threshold, in dollars</span></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="co"># </span></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="co"># Loss_fcn &lt;- function(temperature){</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="co">#   for(i in 1:length(temperature)){</span></a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="co">#     c1*(temperature[i] - c0)</span></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="co">#   }</span></a>
+<a class="sourceLine" id="cb13-8" title="8"><span class="co"># }</span></a>
+<a class="sourceLine" id="cb13-9" title="9"><span class="co"># </span></a>
+<a class="sourceLine" id="cb13-10" title="10"><span class="co"># losses &lt;- Loss_fcn(y)</span></a>
+<a class="sourceLine" id="cb13-11" title="11"><span class="co"># </span></a>
+<a class="sourceLine" id="cb13-12" title="12"><span class="co"># hist(losses, breaks = 10, main = &quot;Empirical distribution of losses based on historically observed temps&quot;)</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">theta_hat &lt;-<span class="st"> </span><span class="kw">mean</span>(y)         <span class="co"># Sample mean</span></a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3">epsilon_hat &lt;-<span class="st"> </span>y<span class="op">-</span>theta_hat   <span class="co"># Model residuals</span></a>
+<a class="sourceLine" id="cb14-4" title="4"></a>
+<a class="sourceLine" id="cb14-5" title="5">ssr &lt;-<span class="st"> </span><span class="kw">sum</span>(epsilon_hat<span class="op">^</span><span class="dv">2</span>)    <span class="co"># Sum of squared residuals</span></a>
+<a class="sourceLine" id="cb14-6" title="6"></a>
+<a class="sourceLine" id="cb14-7" title="7">sigma_hat &lt;-<span class="st"> </span>ssr<span class="op">/</span>(n<span class="dv">-1</span>)       <span class="co"># Estimated standard error</span></a>
+<a class="sourceLine" id="cb14-8" title="8"></a>
+<a class="sourceLine" id="cb14-9" title="9"><span class="kw">print</span>(theta_hat)</a></code></pre></div>
+<pre><code>## [1] 18.57157</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">print</span>(sigma_hat)</a></code></pre></div>
+<pre><code>## [1] 7.506291</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">sim_y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10000</span>, theta_hat, sigma_hat)</a>
+<a class="sourceLine" id="cb18-2" title="2"></a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="kw">hist</span>(sim_y, <span class="dt">breaks =</span> <span class="dv">100</span>)</a></code></pre></div>
+<p><img src="_main_files/figure-html/generate%20distribution%20of%20temp%20based%20on%20model%20results-1.png" width="672" /></p>
+</div>
+<div id="using-a-forecast" class="section level3">
+<h3><span class="header-section-number">9.2.5</span> Using a forecast</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">forecast_bias &lt;-<span class="st"> </span><span class="fl">-0.5</span></a>
+<a class="sourceLine" id="cb19-2" title="2">forecast_std_error &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb19-3" title="3"></a>
+<a class="sourceLine" id="cb19-4" title="4">forecast_errors &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n,<span class="dt">mean =</span> forecast_bias,<span class="dt">sd =</span> forecast_std_error)</a>
+<a class="sourceLine" id="cb19-5" title="5"></a>
+<a class="sourceLine" id="cb19-6" title="6">x &lt;-<span class="st"> </span>y <span class="op">+</span><span class="st"> </span>forecast_errors</a>
+<a class="sourceLine" id="cb19-7" title="7"></a>
+<a class="sourceLine" id="cb19-8" title="8">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(y<span class="op">~</span>x)</a>
+<a class="sourceLine" id="cb19-9" title="9"></a>
+<a class="sourceLine" id="cb19-10" title="10"><span class="kw">plot</span>(x,y, <span class="dt">xlab =</span> <span class="st">&quot;Forecast temperature&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Observed temperature&quot;</span>)</a>
+<a class="sourceLine" id="cb19-11" title="11"><span class="kw">abline</span>(linear_model)</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">plot</span>(x,y)</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="simulation-of-the-prediction-process-one-covariate" class="section level3">
+<h3><span class="header-section-number">9.2.6</span> Simulation of the prediction process, one covariate</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(MASS)</a></code></pre></div>
+<pre><code>## Warning: package &#39;MASS&#39; was built under R version 3.5.2</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">Sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>),<span class="dv">2</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb23-2" title="2">Sigma</a></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   10    3
+## [2,]    3    2</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">var</span>(<span class="kw">mvrnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">2</span>), Sigma))</a></code></pre></div>
+<pre><code>##          [,1]     [,2]
+## [1,] 9.042565 2.692982
+## [2,] 2.692982 1.935439</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">var</span>(<span class="kw">mvrnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">2</span>), Sigma, <span class="dt">empirical =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   10    3
+## [2,]    3    2</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">library</span>(MASS)     <span class="co"># Load packages for working with multivariate normal distributions</span></a>
+<a class="sourceLine" id="cb29-2" title="2"></a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="kw">set.seed</span>(<span class="dv">1</span>)       <span class="co"># Keep random data from changing each time the code is run</span></a>
+<a class="sourceLine" id="cb29-4" title="4"></a>
+<a class="sourceLine" id="cb29-5" title="5"><span class="co"># Variables</span></a>
+<a class="sourceLine" id="cb29-6" title="6"><span class="co"># y : temperature on March 17</span></a>
+<a class="sourceLine" id="cb29-7" title="7"><span class="co"># x : covariate, e.g., forecast of temp on Mar 17</span></a>
+<a class="sourceLine" id="cb29-8" title="8"></a>
+<a class="sourceLine" id="cb29-9" title="9">theta &lt;-<span class="st"> </span><span class="dv">18</span></a>
+<a class="sourceLine" id="cb29-10" title="10"></a>
+<a class="sourceLine" id="cb29-11" title="11"></a>
+<a class="sourceLine" id="cb29-12" title="12"></a>
+<a class="sourceLine" id="cb29-13" title="13">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(N, <span class="dt">mean=</span>theta, <span class="dt">sd=</span>sigma_x)</a>
+<a class="sourceLine" id="cb29-14" title="14"></a>
+<a class="sourceLine" id="cb29-15" title="15">Theta &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">18</span>)      <span class="co"># True long-run average</span></a>
+<a class="sourceLine" id="cb29-16" title="16">Sigma  &lt;-<span class="st">  </span><span class="dv">3</span>      <span class="co"># True stnd dev of temp around this mean</span></a>
+<a class="sourceLine" id="cb29-17" title="17">N      &lt;-<span class="st"> </span><span class="dv">40</span>      <span class="co"># number of simulated historical data points</span></a>
+<a class="sourceLine" id="cb29-18" title="18"></a>
+<a class="sourceLine" id="cb29-19" title="19">y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n,theta,sigma)</a>
+<a class="sourceLine" id="cb29-20" title="20"></a>
+<a class="sourceLine" id="cb29-21" title="21"><span class="kw">hist</span>(y, <span class="dt">breaks =</span> <span class="dv">10</span>, <span class="dt">main =</span> <span class="st">&quot;Histogram of historical temperatures in degrees C&quot;</span>)</a></code></pre></div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-value-of-information.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-decision-tool-project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

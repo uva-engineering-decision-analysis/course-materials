@@ -10,7 +10,11 @@ output:
 
 ***
 
-**algorithm_performance.png**:<center>![](algorithm_performance.png)</center>
+##### algorithm_performance.png
+
+***
+
+<center>![](algorithm_performance.png)</center>
 
 ***
 
@@ -18,7 +22,11 @@ output:
 
 ***
 
-**ARM_with_boundary_layer_clouds.jpg**:<center>![](ARM_with_boundary_layer_clouds.jpg)</center>
+##### ARM_with_boundary_layer_clouds.jpg
+
+***
+
+<center>![](ARM_with_boundary_layer_clouds.jpg)</center>
 
 ***
 
@@ -26,7 +34,11 @@ output:
 
 ***
 
-**Completing_the_forecast.jpg**:<center>![](Completing_the_forecast.jpg)</center>
+##### Completing_the_forecast.jpg
+
+***
+
+<center>![](Completing_the_forecast.jpg)</center>
 
 ***
 
@@ -34,7 +46,11 @@ output:
 
 ***
 
-**conditional_distribution_SOM_state_1.png**:<center>![](conditional_distribution_SOM_state_1.png)</center>
+##### conditional_distribution_SOM_state_1.png
+
+***
+
+<center>![](conditional_distribution_SOM_state_1.png)</center>
 
 ***
 
@@ -42,7 +58,11 @@ output:
 
 ***
 
-**dynamic_programming_lattice.png**:<center>![](dynamic_programming_lattice.png)</center>
+##### dynamic_programming_lattice.png
+
+***
+
+<center>![](dynamic_programming_lattice.png)</center>
 
 ***
 
@@ -50,7 +70,11 @@ output:
 
 ***
 
-**Exp_beta_posterior.png**:<center>![](Exp_beta_posterior.png)</center>
+##### Exp_beta_posterior.png
+
+***
+
+<center>![](Exp_beta_posterior.png)</center>
 
 ***
 
@@ -58,7 +82,11 @@ output:
 
 ***
 
-**hits_and_misses.png**:<center>![](hits_and_misses.png)</center>
+##### hits_and_misses.png
+
+***
+
+<center>![](hits_and_misses.png)</center>
 
 ***
 
@@ -66,7 +94,11 @@ output:
 
 ***
 
-**Hoff_ch1_beta_moments.png**:<center>![](Hoff_ch1_beta_moments.png)</center>
+##### Hoff_ch1_beta_moments.png
+
+***
+
+<center>![](Hoff_ch1_beta_moments.png)</center>
 
 ***
 
@@ -74,7 +106,11 @@ output:
 
 ***
 
-**Hoff_ch2_social_mobility.png**:<center>![](Hoff_ch2_social_mobility.png)</center>
+##### Hoff_ch2_social_mobility.png
+
+***
+
+<center>![](Hoff_ch2_social_mobility.png)</center>
 
 ***
 
@@ -82,7 +118,11 @@ output:
 
 ***
 
-**Hoff_ch3_predictive_distribution.png**:<center>![](Hoff_ch3_predictive_distribution.png)</center>
+##### Hoff_ch3_predictive_distribution.png
+
+***
+
+<center>![](Hoff_ch3_predictive_distribution.png)</center>
 
 ***
 
@@ -90,7 +130,11 @@ output:
 
 ***
 
-**Hoff_cover.png**:<center>![](Hoff_cover.png)</center>
+##### Hoff_cover.png
+
+***
+
+<center>![](Hoff_cover.png)</center>
 
 ***
 
@@ -98,7 +142,11 @@ output:
 
 ***
 
-**Hoff_diabetes_model.png**:<center>![](Hoff_diabetes_model.png)</center>
+##### Hoff_diabetes_model.png
+
+***
+
+<center>![](Hoff_diabetes_model.png)</center>
 
 ***
 
@@ -106,7 +154,11 @@ output:
 
 ***
 
-**Hoff_fig_1-1.png**:<center>![](Hoff_fig_1-1.png)</center>
+##### Hoff_fig_1-1.png
+
+***
+
+<center>![](Hoff_fig_1-1.png)</center>
 
 ***
 
@@ -114,7 +166,11 @@ output:
 
 ***
 
-**Hoff_fig_1-2.png**:<center>![](Hoff_fig_1-2.png)</center>
+##### Hoff_fig_1-2.png
+
+***
+
+<center>![](Hoff_fig_1-2.png)</center>
 
 ***
 
@@ -122,7 +178,11 @@ output:
 
 ***
 
-**Hoff_fig_1-3.png**:<center>![](Hoff_fig_1-3.png)</center>
+##### Hoff_fig_1-3.png
+
+***
+
+<center>![](Hoff_fig_1-3.png)</center>
 
 ***
 
@@ -130,7 +190,11 @@ output:
 
 ***
 
-**Hoff_fig_1-4.png**:<center>![](Hoff_fig_1-4.png)</center>
+##### Hoff_fig_1-4.png
+
+***
+
+<center>![](Hoff_fig_1-4.png)</center>
 
 ***
 
@@ -138,7 +202,11 @@ output:
 
 ***
 
-**Red_river_flood_1997.png**:<center>![](Red_river_flood_1997.png)</center>
+##### Red_river_flood_1997.png
+
+***
+
+<center>![](Red_river_flood_1997.png)</center>
 
 ***
 
@@ -146,7 +214,11 @@ output:
 
 ***
 
-**scientists_arguing.jpg**:<center>![](scientists_arguing.jpg)</center>
+##### scientists_arguing.jpg
+
+***
+
+<center>![](scientists_arguing.jpg)</center>
 
 ***
 
@@ -154,7 +226,11 @@ output:
 
 ***
 
-**SOM_grid_calibrated.png**:<center>![](SOM_grid_calibrated.png)</center>
+##### SOM_grid_calibrated.png
+
+***
+
+<center>![](SOM_grid_calibrated.png)</center>
 
 ***
 
@@ -162,7 +238,11 @@ output:
 
 ***
 
-**SOM_grid_literal.png**:<center>![](SOM_grid_literal.png)</center>
+##### SOM_grid_literal.png
+
+***
+
+<center>![](SOM_grid_literal.png)</center>
 
 ***
 
@@ -170,7 +250,11 @@ output:
 
 ***
 
-**The_Creation_of_Adam.jpg**:<center>![](The_Creation_of_Adam.jpg)</center>
+##### The_Creation_of_Adam.jpg
+
+***
+
+<center>![](The_Creation_of_Adam.jpg)</center>
 
 ***
 
@@ -178,6 +262,10 @@ output:
 
 ***
 
-**value_function.png**:<center>![](value_function.png)</center>
+##### value_function.png
+
+***
+
+<center>![](value_function.png)</center>
 
 ***

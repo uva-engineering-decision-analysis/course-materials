@@ -387,8 +387,7 @@ summary {
 <li><a href="#statistical-decision-theory">Statistical decision theory</a><ul>
 <li><a href="#formalism-for-statistical-decision-models-1">Formalism for statistical decision models</a></li>
 </ul></li>
-<li><a href="#section"></a></li>
-<li><a href="#slide-with-image-left">Slide With Image Left</a></li>
+<li><a href="#review">Review</a></li>
 <li><a href="#additional-notes">Additional notes</a></li>
 </ul>
 </div>
@@ -473,6 +472,7 @@ summary {
 <p>Prior to knowing the realized value of the system’s state, its true value is an uncertain <em>random variable</em>.</p>
 <p>By convention, we will use capital letters to refer to random variables, and lower case letters to refer to corresponding realized values.</p>
 <p>Here, <span class="math inline">\(X\)</span> denotes a random variable that takes values from on the state space <span class="math inline">\(\mathbb{X}\)</span>, and <span class="math inline">\(x\)</span> denotes its realized value in <span class="math inline">\(\mathbb{X}\)</span>.</p>
+<p>Let <span class="math inline">\(f(x | \theta)\)</span> denote the</p>
 </div>
 <div id="random-states-1" class="section level3">
 <h3>Random states</h3>
@@ -511,18 +511,18 @@ summary {
 <p>The payoff to a decision depends on the value of some unobserved parameter <span class="math inline">\(\theta\)</span>, which could be a vector. We have some system for generating a probability distribution <span class="math inline">\(\pi(\theta)\)</span> over <span class="math inline">\(\theta\)</span>. In Bayesian approaches, the probability distribution <span class="math inline">\(\pi(\theta)\)</span> used is the posterior distribution of <span class="math inline">\(\theta\)</span> given the observed data: <span class="math inline">\(\pi(\theta | y)\)</span>. Other approaches exist for creating probability distributions over states</p>
 </div>
 </div>
-<div id="section" class="section level2">
-<h2></h2>
-</div>
-<div id="slide-with-image-left" class="section level2">
-<h2>Slide With Image Left</h2>
-<div class="columns">
-<div class="column">
-<p>left</p>
-</div><div class="column">
-<p>right</p>
-</div>
-</div>
+<div id="review" class="section level2">
+<h2>Review</h2>
+<ul>
+<li><p>A decision-maker (a.k.a. <em>actor</em>) chooses one option from a menu of possible <em>actions</em>.</p></li>
+<li><p>Payoffs from that choice depend on the action chosen, and on the <em>true</em> value of the state of nature. ** Payoffs may equivalently be represented as <em>losses</em> — negative payoffs relative to some baseline.</p></li>
+<li><p>The true value of the state of nature is <em>uncertain</em>. Hence the decision-maker confronts a problem of <em>decision-making under uncertainty</em>. ** Each possible action thus maps to a <em>lottery</em> over uncertain payoffs.</p></li>
+<li><p>Typically, the decision-maker will posses some information about the likelihood of different states of nature.</p></li>
+<li><p>This information can be represented formally by treating the state of nature as a random variable drawn from a known distribution.</p></li>
+<li><p>Given a complete enumeration of ** the menu of possible actions, ** the set of possible states of nature, ** a probability distribution over the set of states of nature, representing the likelihood of states, and ** a <em>payoff function</em> that gives the payoffs (or losses) from each possible combination of action <span class="math inline">\(\times\)</span> state, in some units of measure. then each possible action maps to a <em>lottery</em> over payoffs (losses).</p></li>
+<li><p>Finally, given a lottery over payoffs, the actor chooses an <em>optimal</em> action guided by a <em>decision-making principle</em>: ** <em>Example:</em> Maximize expected payoffs. ** <em>Example:</em> Maximize expected utility of payoffs. ** <em>Example:</em> ‘Minimax’: Choose the action to minimize possible loss, irrespective of probabilities.</p></li>
+<li><p>The decision-making principle encodes the actor’s attitude towards risk – the willingness to accept losses in some uncertain states of the world, in exchange for acheiving gains in other states of the world. ** The study of attitudes towards risk and loss is huge topic in economics, finance, and psychology. We will cover it only glancingingly. ** For your applications, just at minimum be aware that the actor’s optimum choices may not be driven by goal to maximize expected gains (= minimize expected losses).</p></li>
+</ul>
 </div>
 <div id="additional-notes" class="section level1">
 <h1>Additional notes</h1>

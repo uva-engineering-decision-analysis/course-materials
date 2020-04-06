@@ -1,0 +1,159 @@
+---
+title: 'Introduction to Bayesian Methods'
+ # subtitle: ''
+author: "Arthur Small"
+institute: "Spring 2020" 
+date:   SYS 6014 Decision Analysis
+output:
+  beamer_presentation:
+ #   theme: "metropolis"
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structuresmallcapsserif"
+    toc: false
+    #toc_depth: 3
+    slide_level: 3
+    fig_width: 3.5
+    fig_height: 3
+    fig_caption: true
+    
+   # html_document:
+   #  toc: true
+   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r make_beamer_slides, include=FALSE, eval= FALSE}
+library(rmarkdown)
+
+# See documentation at: https://rdrr.io/cran/rmarkdown/man/beamer_presentation.html
+# and at: https://bookdown.org/yihui/rmarkdown/beamer-presentation.html
+# and at: https://rdrr.io/cran/rmarkdown/man/render.html
+
+render("", beamer_presentation(
+  toc = FALSE,
+  slide_level = NULL,
+  number_sections = FALSE,
+  incremental = FALSE,
+  fig_width = 10,
+  fig_height = 7,
+  fig_crop = TRUE,
+  fig_caption = TRUE,
+  dev = "pdf",
+  df_print = "default",
+  theme = "default",
+  colortheme = "default",
+  fonttheme = "default",
+  highlight = "default",
+  template = "default",
+  keep_tex = FALSE,
+  keep_md = FALSE,
+  latex_engine = "pdflatex",
+  citation_package = c("none", "natbib", "biblatex"),
+  self_contained = TRUE,
+  includes = NULL,
+  md_extensions = NULL,
+  pandoc_args = NULL
+)
+```
+
+
+### Big picture: data-driven decision-making
+
+You have a set of possible actions you can take.
+
+You have a prediction model or classification model that enables you to *differentiate* between cases, based on data.
+
+Your decision model then enables you to discriminate --- to make the "right" intervention for each different case, rather than just choosing the same action for all cases.
+ 
+### Predictive models
+
+Predictive models may take many different forms. 
+
+  * They may use many, many different types of data
+  * They may be built using different analytic techniques: statistical regression, machine learning,$\ldots$
+
+We embrace this diversity of approaches.
+
+But: we want our predictions to include *uncertainty* information.
+
+So: want outputs in form of *probability distributions* over decision-state variables
+
+
+### Probabilistic predictions
+
+
+
+
+## Bayesian Methods
+
+
+
+### Bayesian methods: Introduction via simple example
+
+(Related readings: Hoff Ch. 1)
+
+Suppose you want to estimate the fraction of a population that is infected with some disease.
+
+$\theta \in [0,1]$ : true value
+
+Test a randome sample of $20$ from the population. 
+
+$Y \in \{0,1,\ldots,20\}$ : # of positive results.
+
+Question: What does realized value of $Y$ tell us about the true value of $\theta$?
+
+###
+
+$Y | \theta$ ~ binomial$(20,\theta)$: For $y = 0, 1, \ldots, 20$,
+
+$$l(y|\theta) = \Pr(Y=y | \theta) = {20 \choose y} \theta^y (1-\theta)^{(20-y)}$$
+
+where $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+
+$l(y|\theta)$ called the *likelihood function*.
+
+Idea: For any $0< \theta < 1$, all values of $Y$ are *possible*, but some are more likely than others. 
+
+The likelihood function tells us how likely is each possible observation, for a given $\theta$.
+
+If, say, $Y = 15$, that provides evidence that $\theta$ is not small.
+
+### Prior information
+
+Suppose we have some background knowledge about the likely values of $\theta$. 
+
+Represent this knowledge by means of a *prior distribution* $\pi(\theta)$ over $[0,1]$.
+
+Obviously, there are many (infinitely many) possible such distributions. 
+
+For convenience, we typically choose to model priors as chosen from a parametrized family of distributions.
+
+### The Beta distribution
+
+$$\pi(\theta) \sim \text{beta}(a,b)$$
+
+For our case, let's suppose our prior beliefs correspond to:
+
+$$\pi(\theta) \sim \text{beta}(2,20)$$
+
+
+### Bayes Theorem
+
+Let $\pi(\theta | y)$ denote our *posterior distribution* over values of $\theta$.
+
+This means: our *updated* beliefs about the likelihood that $\theta$ takes various values, *after* we've received our test results.
+
+Bayes Theorem says:
+
+
+
+$$\pi(\theta | y) = \frac{l(y|\theta) \pi(\theta)}{Pr\{Y = y\}} 
+                  = \frac{l(y|\theta) \pi(\theta)}{\int_\Theta l(y|\tilde{\theta})\pi(\tilde{\theta}) d\tilde{\theta}}$$
+
+
+

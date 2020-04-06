@@ -358,43 +358,42 @@ where <span class="math inline">\(\theta\)</span> denotes the true but unobserve
 </div>
 <div id="simulation-of-the-prediction-process-one-covariate" class="section level3">
 <h3><span class="header-section-number">9.2.6</span> Simulation of the prediction process, one covariate</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(MASS)</a>
-<a class="sourceLine" id="cb21-2" title="2"></a>
-<a class="sourceLine" id="cb21-3" title="3"></a>
-<a class="sourceLine" id="cb21-4" title="4">Sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>),<span class="dv">2</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb21-5" title="5">Sigma</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(MASS)</a></code></pre></div>
+<pre><code>## Warning: package &#39;MASS&#39; was built under R version 3.5.2</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">Sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>),<span class="dv">2</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb23-2" title="2">Sigma</a></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]   10    3
 ## [2,]    3    2</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">var</span>(<span class="kw">mvrnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">2</span>), Sigma))</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">var</span>(<span class="kw">mvrnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">2</span>), Sigma))</a></code></pre></div>
 <pre><code>##          [,1]     [,2]
 ## [1,] 9.042565 2.692982
 ## [2,] 2.692982 1.935439</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">var</span>(<span class="kw">mvrnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">2</span>), Sigma, <span class="dt">empirical =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">var</span>(<span class="kw">mvrnorm</span>(<span class="dt">n=</span><span class="dv">1000</span>, <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">2</span>), Sigma, <span class="dt">empirical =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]   10    3
 ## [2,]    3    2</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">library</span>(MASS)     <span class="co"># Load packages for working with multivariate normal distributions</span></a>
-<a class="sourceLine" id="cb27-2" title="2"></a>
-<a class="sourceLine" id="cb27-3" title="3"><span class="kw">set.seed</span>(<span class="dv">1</span>)       <span class="co"># Keep random data from changing each time the code is run</span></a>
-<a class="sourceLine" id="cb27-4" title="4"></a>
-<a class="sourceLine" id="cb27-5" title="5"><span class="co"># Variables</span></a>
-<a class="sourceLine" id="cb27-6" title="6"><span class="co"># y : temperature on March 17</span></a>
-<a class="sourceLine" id="cb27-7" title="7"><span class="co"># x : covariate, e.g., forecast of temp on Mar 17</span></a>
-<a class="sourceLine" id="cb27-8" title="8"></a>
-<a class="sourceLine" id="cb27-9" title="9">theta &lt;-<span class="st"> </span><span class="dv">18</span></a>
-<a class="sourceLine" id="cb27-10" title="10"></a>
-<a class="sourceLine" id="cb27-11" title="11"></a>
-<a class="sourceLine" id="cb27-12" title="12"></a>
-<a class="sourceLine" id="cb27-13" title="13">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(N, <span class="dt">mean=</span>theta, <span class="dt">sd=</span>sigma_x)</a>
-<a class="sourceLine" id="cb27-14" title="14"></a>
-<a class="sourceLine" id="cb27-15" title="15">Theta &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">18</span>)      <span class="co"># True long-run average</span></a>
-<a class="sourceLine" id="cb27-16" title="16">Sigma  &lt;-<span class="st">  </span><span class="dv">3</span>      <span class="co"># True stnd dev of temp around this mean</span></a>
-<a class="sourceLine" id="cb27-17" title="17">N      &lt;-<span class="st"> </span><span class="dv">40</span>      <span class="co"># number of simulated historical data points</span></a>
-<a class="sourceLine" id="cb27-18" title="18"></a>
-<a class="sourceLine" id="cb27-19" title="19">y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n,theta,sigma)</a>
-<a class="sourceLine" id="cb27-20" title="20"></a>
-<a class="sourceLine" id="cb27-21" title="21"><span class="kw">hist</span>(y, <span class="dt">breaks =</span> <span class="dv">10</span>, <span class="dt">main =</span> <span class="st">&quot;Histogram of historical temperatures in degrees C&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">library</span>(MASS)     <span class="co"># Load packages for working with multivariate normal distributions</span></a>
+<a class="sourceLine" id="cb29-2" title="2"></a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="kw">set.seed</span>(<span class="dv">1</span>)       <span class="co"># Keep random data from changing each time the code is run</span></a>
+<a class="sourceLine" id="cb29-4" title="4"></a>
+<a class="sourceLine" id="cb29-5" title="5"><span class="co"># Variables</span></a>
+<a class="sourceLine" id="cb29-6" title="6"><span class="co"># y : temperature on March 17</span></a>
+<a class="sourceLine" id="cb29-7" title="7"><span class="co"># x : covariate, e.g., forecast of temp on Mar 17</span></a>
+<a class="sourceLine" id="cb29-8" title="8"></a>
+<a class="sourceLine" id="cb29-9" title="9">theta &lt;-<span class="st"> </span><span class="dv">18</span></a>
+<a class="sourceLine" id="cb29-10" title="10"></a>
+<a class="sourceLine" id="cb29-11" title="11"></a>
+<a class="sourceLine" id="cb29-12" title="12"></a>
+<a class="sourceLine" id="cb29-13" title="13">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(N, <span class="dt">mean=</span>theta, <span class="dt">sd=</span>sigma_x)</a>
+<a class="sourceLine" id="cb29-14" title="14"></a>
+<a class="sourceLine" id="cb29-15" title="15">Theta &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">18</span>)      <span class="co"># True long-run average</span></a>
+<a class="sourceLine" id="cb29-16" title="16">Sigma  &lt;-<span class="st">  </span><span class="dv">3</span>      <span class="co"># True stnd dev of temp around this mean</span></a>
+<a class="sourceLine" id="cb29-17" title="17">N      &lt;-<span class="st"> </span><span class="dv">40</span>      <span class="co"># number of simulated historical data points</span></a>
+<a class="sourceLine" id="cb29-18" title="18"></a>
+<a class="sourceLine" id="cb29-19" title="19">y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n,theta,sigma)</a>
+<a class="sourceLine" id="cb29-20" title="20"></a>
+<a class="sourceLine" id="cb29-21" title="21"><span class="kw">hist</span>(y, <span class="dt">breaks =</span> <span class="dv">10</span>, <span class="dt">main =</span> <span class="st">&quot;Histogram of historical temperatures in degrees C&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 </div>

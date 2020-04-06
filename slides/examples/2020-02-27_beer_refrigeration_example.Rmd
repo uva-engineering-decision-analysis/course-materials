@@ -6,7 +6,7 @@ output: html_notebook
 
 
 
-# The decsion problem
+# The decision problem
 
 A pub owner in Charlottesville plans to sell beer outside on St. Patrick's Day, March 17. The pub owner must decide whether to arrange to rent a supplemental refrigeration system for the day. 
 
@@ -95,9 +95,9 @@ One very good idea is to perform a *sensitivity analysis*. How sensitive are you
 On the other hand, if your decision recommendations are not highly sensitive to your statistical assumptions, then keeping your initial model may be defensible. The point of this work is *not* to build the best possible prediction system, bullet-proof against any statistical criticism. The point is to help people make good decisions -- or at least, decisiions better than they would have made otherwise. Your time and other resources are limited. A good-enough model may be good enough.
 
 
-## Simulation of the prediction process
+## Simulation of the prediction process, no covariates
 
-```{r simulate historical data}
+```{r simulate historical data - no covariates}
 
 theta <-  18      # True long-run average temp
 sigma  <-  3      # True stnd dev of temp around this mean
@@ -111,5 +111,16 @@ hist(y, breaks = 10, main = "Histogram of historical temperatures in degrees C")
 
 ```
 
+```{r generate bivariate normal, message=FALSE}
+library(MASS)
 
+Sigma <- matrix(c(10,3,3,2),2,2)
+Sigma
+var(mvrnorm(n=1000, rep(0, 2), Sigma))
+var(mvrnorm(n=1000, rep(0, 2), Sigma, empirical = TRUE))
+```
+
+```{r}
+
+```
 

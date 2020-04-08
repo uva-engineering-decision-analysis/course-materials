@@ -12,6 +12,7 @@ description: "An introduction to decision analysis, based on statistical decisio
 
 ```{r load required packages, include=FALSE, message=FALSE, warning=FALSE}
 library(here)
+
 ```
 
 # {-}

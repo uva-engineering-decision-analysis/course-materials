@@ -1,0 +1,128 @@
+---
+title: 'The COVID-19 Shutdown Decision'
+ # subtitle: 'Public choice, health risks, and cost-benefit analysis'
+author: "Arthur Small"
+institute: "Spring 2020" 
+date:   SYS 6014 Decision Analysis
+output:
+  beamer_presentation:
+ #   theme: "metropolis"
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structuresmallcapsserif"
+    toc: false
+    #toc_depth: 3
+    slide_level: 3
+    fig_width: 3.5
+    fig_height: 3
+    fig_caption: true
+    
+   # html_document:
+   #  toc: true
+   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r load packages, echo=FALSE, include=FALSE}
+library(here)
+```
+
+
+### How to think analytically about COVID-19 shut-down and re-open decisions?
+
+ * Public choice
+ * Health and safety risks
+ * Cost-benefit analysis
+ * Ethics 
+ * Sunk costs
+ * Distribution of costs and benefits
+ 
+## COVID-19 shut-down: What are the trade-offs?
+
+At broadest level, can imperfectly but usefully think of the shut-down decision turning on a single key trade-off.
+
+The shut-down delivers:
+
+  * *Benefits*: Reduced health risks: Fewer deaths and health crises
+  * *Costs*: Economic disruption, loss of production 
+
+Benefits and costs are both:
+
+  * very large in magnitude
+  * characterized by large uncertainties
+  * distributed unevenly through the population
+  * not under the control of a single unitary decision-maker - these are *public choices*
+  
+
+### How is this decision analogous to those we've modeled?
+
+Some features we've already seen:
+
+  * Decision-maker: A high gov't official, e.g., U.S. state Governor, national Prime Minister
+  * Action set: On each date $t$, announce a shut-down level from a menu of options
+    - Decisions made sequentially, each on the basis of updated but still-imperfect information
+
+###
+
+  * State space: On each date $t$: Imagine you had all the data:
+    - The true state of the system: which people are in which state of vulerability -- susceptible, infected, recovered, immune
+    - Health characteristics/status of each population member: age, immuno-compromised status, etc.
+    - Social structure: who's sheltering with whom
+    - State of the health care delivery system: capacity, current demand for services, supplies of key materials, etc.
+    - Etc.
+
+###
+
+  * Parameter space: key unknowns:
+    - Rate of exposure, as a function of social distancing policy and other measures
+    - Rate of contagion, conditioned on exposure
+    - Health consequences, conditioned on contagion
+  * Predictive model(s): Information about impacts of choices 
+  * Etc.
+
+### How is this decision distinctive?
+
+  * How to trade off health and mortality risks with economic costs? Comensurable?
+  
+  * Costs and benefits are *unevenly distributed* through the population
+  
+  * *Externalities*: Individual choices impose costs on others.
+
+  * This is a problem in *public choice*: Multiple (here, *many*) individuals affected who may differ in their objectives/utility functions, yet must all accept a uniform decision (more or less).
+  
+  * *Ethics* of alternative options
+  
+## How economists (tend to) handle public choices that affect risks to health, safety, mortality
+
+### Social cost-benefit analysis
+
+Framework for dealing with *public choices*. 
+
+Attempts to guide public choices as if they were those of a single, rational, optimizing decision-maker.
+
+Core principles:
+
+  * Decision criterion concept: "Choose for the public what they would choose for themselves, if they were in position to do so."
+  
+When all costs and benefits are economic, monetizable: measure costs and benefits in monetary units.
+  
+When it benefits or costs are not easily monetized (health, environment, etc.), use various techniques to assign dollar values to costs and benefits.
+  
+Guiding principle for these exercises: Estimate value based on how people make analogous trade-offs in their private choices.
+
+### Measuring improvements in health and safety
+
+How much do people pay for safety?
+
+How much extra do they demand to be paid for dangerous jobs?
+
+Etc.
+
+
+  
+  
+  
+ 

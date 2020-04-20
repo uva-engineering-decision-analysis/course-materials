@@ -3,7 +3,9 @@ title: "Decision Analysis: Semi-organized notes"
 author: "Arthur Small"
 date: "SYS 6014 Decision Analysis Spring 2020<p> Version of: `r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::pdf_book
+output: 
+    bookdown::gitbook
+    bookdown::pdf_book
 documentclass: book
 biblio-style: apalike
 link-citations: yes
@@ -754,4 +756,7 @@ In what programming language and platform will you perform your coding?
 
 
 
+
+
+<!--chapter:end:index.Rmd-->
 

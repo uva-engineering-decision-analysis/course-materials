@@ -1,0 +1,182 @@
+---
+title: "Problem Set"
+institute: "Spring 2020" 
+author:   "SYS 6014 Decision Analysis, Spring 2020"
+date: "Due May 10, 10:00 p.m. EDT"
+output:
+   html_document:
+     toc: false
+---
+
+Students are encouraged to prepare answers using Markdown. A copy of this document in Markdown format is provided to facilitate. 
+
+Please submit your answers via Collab, rather than through Github (since posts to Github are visible to other students). 
+
+<br>
+
+### Choice of optimal action under uncertainty
+
+A toy company is evaluating the size of its sales force. It must decide to expand, shrink, or leave in place its current sales force, depending in part on beliefs about economic conditions next year.
+
+The company will select exactly one action from the action set $\mathbb{A} = \{a_+, a_0, a_-\}$, where $a_+$ and $a_-$ denote a ten-percent increase and decrease in sales force, respectively, and where $a_0$ denotes a decision to leave the current sales force unchanged.
+
+The payoff for each decision depends on the state $\theta$ of the economy next year. The company's business analytics team is considering three possible scenarios: next year's economy will be 'good' ($\theta = \theta_1$), 'so-so' ($\theta = \theta_2$), or 'bad' ($\theta = \theta_3$). The analysts have developed a matrix that predicts the company's profits $\Pi(a, \theta)$ (in millions of dollars) for each possible action $a$ and future state $\theta$:
+
+
+|           |$a_-$ | $a_0$ | $a_+$ |
+|:--:|--:|--:|--:|
+|$\theta_1$ | $10$ | $5$  | $3$ |
+|$\theta_2$ | $5$  | $5$  | $2$ |
+|$\theta_3$ | $-1$ | $0$  | $1$ |
+
+Looking backwards over many years of history, the analysts observe that economic conditions have been 'good' about forty percent of the time, 'so-so' about forty percent of the time, and 'bad' about twenty percent of the time. Summarizing this historical information, the analysts form prior beliefs about the likelihood of different economic conditions next year. These are expressed as a probability distribution over $\mathbb{\Theta}$, the set of all possible values of $\theta$. For each $i = 1,2,3$, let $p_i$ denote the probability that the realized state of the economy next year corresponds to $\theta_i$: $p_i = \Pr(\theta = \theta_i)$. The analysts' priors may be summarized: $p_1 = 0.4$, $p_2 = 0.4$, $p_3 = 0.2$. More compactly, we may write: ${\bf{p}} = < 0.4, 0.4, 0.2>$. 
+
+Let $\mathbb{E} \Pi(a \mid {\bf{p}} )$ denote the *expected payoff* from taking action $a$, given beliefs $\bf{p}$ about future economic conditions: 
+  
+$$ \mathbb{E} \Pi(a \mid {\bf{p}}) = \mathbb{E}\left[ \Pi(a,\theta) \mid \bf{p}\right]$$
+<br>
+
+#### Questions:
+
+
+1. For each possible action $a \in \mathbb{A}$, compute the expected payoff  $\mathbb{E} \Pi(a \mid {\bf{p}} )$.
+
+```{r compute expected payoffs, echo=FALSE}
+p <- c(0.4,0.4,0.2)
+
+Pi <- tibble(a1 = c(10,5,-1), a2=c(5,5,0), a3 = c(3,2,1))
+
+M <- as.matrix(Pi)
+
+p%*%M
+
+pp <- c(0.1,0.3,0.6)
+
+pp%*%M
+
+```
+
+
+<br>
+Corporate policy calls for taking actions that maximize profits in expectation: managers are supposed to be *risk-neutral* in their decision-making.
+
+2. *Identify the optimal action for a risk-neutral decision maker.* Denote this optimal action $a^*$:
+  
+$$ a^* = {\underset{a \in \mathbb{A}}{argmax}}\  \mathbb{E} \Pi(a \mid {\bf{p}}) $$
+
+<br><br>
+The firm's forecasting unit now issues an updated forecast for economic conditions in the coming year: $\bf{p'}$ = $< 0.1, 0.3, 0.6>$.
+
+3. *Using the updated probabilistic forecast, revise your estimates of the expected payoffs from each action.* 
+
+4. *Identify the new optimal action, given the updated beliefs.* (It might be the same action as before, or a different one.) Denote this new optimal action $\hat{a}^*$:
+
+$$ \hat{a}^* = {\underset{a \in \mathbb{A}}{argmax}}\  \mathbb{E} \Pi(a \mid {\bf{\hat{p}}}) $$
+  
+<br><br>
+The *expected value of information* for a forecast is defined as the expected increase in payoffs to a decision-maker when they make a decision on the basis of the forecast, compared to a default baseline. 
+
+Formally: the expected value of information $EVI$ for forecast $\bf{\hat{p}}$, relative to baseline beliefs $\bf{p}$, is given by:
+
+$$EVI = {\mathbb{E}\left[ \Pi(\hat{a}^*,\theta) \mid  \bf{\hat{p}}\right]} - \mathbb{E}\left[ \Pi(a^*,\theta) \mid  \bf{p}\right]$$
+Less formally, $EVI$ is the answer to the question: What is the maximum amount that a risk-neutral decision-maker would be willing to spend for the forecast?[^1]
+
+[^1]: This is an admittedly awkward construction in the present case, since the manager cannot know in advance what s/he would be willing to pay before actually receiving the forecast.
+
+5. *For the case above, compute the expected value of information for the forecast $\bf{\hat{p}}$, relative to the default baseline information $\bf{p}$.*
+
+<br><br>
+Notwithstanding official corparate policy, company middle managers have learned through bitter experience that in practice bad finacial results are severely punished by senior executives, while good results are not really rewarded very much. Over time, they have learned to play it safe, and have adopted a *maximin* decicion rule: they choose the action that maximizes minimum payoffs, regardless of the probabilities of different states.
+
+6. *Identify the optimal decision for an agent following a maximin decision rule.*
+  
+
+<br><br>
+In some situations, an action is never the best one, no matter what the probabilities over future states. An action is called *inadmissible* if there is another action that offers payoffs at least as favorable in all states of the world, and better payoffs in at least one state of the world. 
+
+Formally: an action $a \in \mathbb{A}$ is *inadmissible* if there exists another action $a' \in \mathbb{A}$ such that $\Pi(a,\theta) \leq \Pi(a',\theta)$ for all $\theta \in \mathbb{\Theta}$, and $\Pi(a,\theta_0) \lt \Pi(a',\theta_0)$ for at least one $\theta_0 \in \mathbb{\Theta}$.
+
+In this case, the action $a$ is said to be *dominated* by the action $a'$. A decision-maker with these payoffs would never choose action $a$ when $a'$ is available. 
+
+An action is said to be *admissible* if it is not dominated by any other action.
+
+7. *Identify any inadmissible actions* in the case above. (There may or may not be any.)
+  
+
+
+
+### Statistical models of the data-generating process: Model specification and analysis of residuals
+
+You are developing a decision model. In the situation you are analyzing, the decision-maker's payoffs depend on the choice of action $a \in \mathbb{A}$ and on the value of a state variable $y$. The true value of $y$ is uncertain. However, you believe that $y$ is correlated with another variable $x$ that is observable. You decide to develop a model of the relationship between $x$ and $y$ that you will use to reduce your uncertainty about $y$ and, therefore, about the distribution of payoffs for the various possible actions. Your hope is to generate useful guidance that enables you to reach better decisions.
+
+You have access to a set of historical data with matched pairs $<x_i,y_i>$ for some $i = 1, \ldots, n$. You decide to use these data to train a statistical model of the relationship between the two variables.
+
+To do so, you first must write down your model of the data-generating process. Based on your background understanding of how the data were generated, you believe that the data-generating process can be reasonably represented with a linear model:
+
+ $$ y_i = \beta_0 + \beta_1x_i + \varepsilon_i $$
+with errors that are independent and identically normally distributed: $\varepsilon_i \sim N(0,\sigma^2)$. 
+
+Next, you must decide on a procedure for estimating the values of the unobserved model parameters $\beta_0$, $\beta_1$, and $\sigma^2$. You opt to use an ordinary least squares estimation procedure. This procedure yields estimated values $b_0$, $b_1$, and $s^2$, respectively. Your fitted model is
+
+  $$ y_i = \hat{y}_i + e_i = b_0 + b_1 x_i + e_i $$
+where the $e_i$ denote the model residuals:
+
+  $$ e_i = y_i - \hat{y}_i = y_i - (b_0 + b_1 x_i) $$
+Being well-trained in statistics, you know that it is a very good idea to examine these model residuals. It is important to confirm that they look consistent with the assumptions of your statistical model. You create a scatter plot displaying the fitted values $\hat{y}_i$ against the model residuals $e_i$.  
+
+<br>
+
+#### Questions:
+
+
+Examine the four residual plots below:
+
+```{r make residual plots, echo=FALSE,message=FALSE,warning=FALSE}
+library(ggplot2)
+library(dplyr)
+library(latex2exp)
+
+n <- 80
+i <- 1:n/2
+
+g <- ggplot(data.frame(x = c(0, n/2)), aes(x)) +
+  geom_hline(yintercept = 0, color = "grey", linetype = "dashed") +
+  xlab(TeX('Fitted values $\\hat{y}_i$')) + ylab(TeX('Residuals $e_i$')) +
+  ylim(-4,4) +
+  theme_classic()
+
+e1 <- as_tibble(rnorm(n))
+g + geom_point(data = e1, aes(x=i,y=value))
+
+e2 <- e1*i*4/n
+g + geom_point(data = e2, aes(x=i,y=value))
+
+e3 <- e1 + ((i-n/4)^2)/100 -2
+g + geom_point(data = e3, aes(x=i,y=value))
+
+e4 <- e1/2 + 2*sin(8*pi*i/n)
+g + geom_point(data = e4, aes(x=i,y=value))
+```
+
+For at least two of the four residual plots:
+
+  a. State whether or not the residuals look consistent with the assumptions about the data-generating process that are encoded in your statistical model.
+  
+  b. If not, describe why not. If you can, use technical terms to identify the feature(s) that apparently characterize the true data-generating process, that are not captured in the assumptions of the statistical model.
+  
+  c. You plan to use your statistical model to generate forecasts that you will then use to power a decision model. Give an narrative example of a situation in which using the model with this mis-specification might lead to sub-optimal decisions. 
+
+ * This narrative may be brief. The goal is simply to discussion about how model (mis-)specification matters, when using a forecasting model to power algorithmic decision-making.
+    
+  d. Bonus question: Describe how you might go about adjusting your model, to improve its specification and thereby improve decision-making.
+
+<br>
+
+#### --- End of problem set ---
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@ institute: "Spring 2020"
 author:   "SYS 6014 Decision Analysis, Spring 2020"
 date: "Due May 10, 10:00 p.m. EDT"
 output:
-   html_document:
+   pdf_document:
      toc: false
 ---
 
@@ -66,7 +66,7 @@ Notwithstanding official corparate policy, company middle managers have learned 
 <br><br>
 In some situations, an action is never the best one, no matter what the probabilities over future states. An action is called *inadmissible* if there is another action that offers payoffs at least as favorable in all states of the world, and better payoffs in at least one state of the world. 
 
-Formally: an action $a \in \mathbb{A}$ is *inadmissible* if there exists another action $a' \in \mathbb{A}$ such that $\Pi(a,\theta) \leq \Pi(a',\theta)$ for all $\theta \in \mathbb{\Theta}$, and $\Pi(a,\theta_0) \lt \Pi(a',\theta_0)$ for at least one $\theta_0 \in \mathbb{\Theta}$.
+Formally: an action $a \in \mathbb{A}$ is *inadmissible* if there exists another action $a' \in \mathbb{A}$ such that $\Pi(a,\theta) \leq \Pi(a',\theta)$ for all $\theta \in \mathbb{\Theta}$, and $\Pi(a,\theta_0) < \Pi(a',\theta_0)$ for at least one $\theta_0 \in \mathbb{\Theta}$.
 
 In this case, the action $a$ is said to be *dominated* by the action $a'$. A decision-maker with these payoffs would never choose action $a$ when $a'$ is available. 
 

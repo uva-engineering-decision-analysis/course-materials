@@ -41,22 +41,6 @@ $$ \mathbb{E} \Pi(a \mid {\bf{p}}) = \mathbb{E}\left[ \Pi(a,\theta) \mid \bf{p}\
 
 1. For each possible action $a \in \mathbb{A}$, compute the expected payoff  $\mathbb{E} \Pi(a \mid {\bf{p}} )$.
 
-```{r compute expected payoffs, echo=FALSE}
-p <- c(0.4,0.4,0.2)
-
-Pi <- tibble(a1 = c(10,5,-1), a2=c(5,5,0), a3 = c(3,2,1))
-
-M <- as.matrix(Pi)
-
-p%*%M
-
-pp <- c(0.1,0.3,0.6)
-
-pp%*%M
-
-```
-
-
 <br>
 Corporate policy calls for taking actions that maximize profits in expectation: managers are supposed to be *risk-neutral* in their decision-making.
 
@@ -72,23 +56,11 @@ The firm's forecasting unit now issues an updated forecast for economic conditio
 4. *Identify the new optimal action, given the updated beliefs.* (It might be the same action as before, or a different one.) Denote this new optimal action $\hat{a}^*$:
 
 $$ \hat{a}^* = {\underset{a \in \mathbb{A}}{argmax}}\  \mathbb{E} \Pi(a \mid {\bf{\hat{p}}}) $$
-  
-<br><br>
-The *expected value of information* for a forecast is defined as the expected increase in payoffs to a decision-maker when they make a decision on the basis of the forecast, compared to a default baseline. 
-
-Formally: the expected value of information $EVI$ for forecast $\bf{\hat{p}}$, relative to baseline beliefs $\bf{p}$, is given by:
-
-$$EVI = {\mathbb{E}\left[ \Pi(\hat{a}^*,\theta) \mid  \bf{\hat{p}}\right]} - \mathbb{E}\left[ \Pi(a^*,\theta) \mid  \bf{p}\right]$$
-Less formally, $EVI$ is the answer to the question: What is the maximum amount that a risk-neutral decision-maker would be willing to spend for the forecast?[^1]
-
-[^1]: This is an admittedly awkward construction in the present case, since the manager cannot know in advance what s/he would be willing to pay before actually receiving the forecast.
-
-5. *For the case above, compute the expected value of information for the forecast $\bf{\hat{p}}$, relative to the default baseline information $\bf{p}$.*
 
 <br><br>
 Notwithstanding official corparate policy, company middle managers have learned through bitter experience that in practice bad finacial results are severely punished by senior executives, while good results are not really rewarded very much. Over time, they have learned to play it safe, and have adopted a *maximin* decicion rule: they choose the action that maximizes minimum payoffs, regardless of the probabilities of different states.
 
-6. *Identify the optimal decision for an agent following a maximin decision rule.*
+5. *Identify the optimal decision for an agent following a maximin decision rule.*
   
 
 <br><br>
@@ -100,7 +72,7 @@ In this case, the action $a$ is said to be *dominated* by the action $a'$. A dec
 
 An action is said to be *admissible* if it is not dominated by any other action.
 
-7. *Identify any inadmissible actions* in the case above. (There may or may not be any.)
+6. *Identify any inadmissible actions* in the case above. (There may or may not be any.)
   
 
 
